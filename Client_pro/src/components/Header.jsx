@@ -2,8 +2,8 @@
 function Header() {
     return (
         <>
-            <div className="header"> 
-                <h1>Task Management System</h1>
+            <div className="h-full "> 
+                <h1 className="text-3xl p-2 text-blue-800 font-medium">Task Management System</h1>
             </div>
         </>
     )
