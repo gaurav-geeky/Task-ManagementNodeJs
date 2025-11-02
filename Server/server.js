@@ -1,3 +1,4 @@
+
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -21,6 +22,6 @@ app.use("/admin", AdminRoute);
 
 const port = process.env.PORT || 9999
 app.listen(port, () => {
-    console.log(`server is running at ${port} port `); 
+    console.log(`server is running at ${port} port !`); 
 });
 

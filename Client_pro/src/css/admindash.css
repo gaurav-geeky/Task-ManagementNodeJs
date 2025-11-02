@@ -1,4 +1,7 @@
 #admin {
+    width: 100vw;
+    height: 7vh;
+    background-color: lightgreen;
     font-size: 30px;
     color: purple; 
 }

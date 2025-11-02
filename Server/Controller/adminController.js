@@ -1,5 +1,6 @@
 
 const AdminModel = require('../Model/adminModel');
+const UserPassword = require('../middleware/randomPassword'); 
 
 const adminLogin = async (req, res) => {
     console.log(req.body);
@@ -15,15 +16,22 @@ const adminLogin = async (req, res) => {
             res.status(401).send({ msg: "Invalid Password.." });
         }
 
-        res.status(200).send({Admin: Admin, msg: "Login Succesfull..." });
+        res.status(200).send({ Admin: Admin, msg: "Login Succesfull..." });
 
     } catch (error) {
         console.log(error);
     }
 }
 
+const userCreate = async (req, res) => { 
+    console.log("Body : ", req.body); 
+    const { empname, empmail, designation } = req.body; 
+    console.log("Random password:", UserPassword.myPassword()); 
+    res.send("okkk pass"); 
+}
 
 module.exports = {
-    adminLogin
+    adminLogin,
+    userCreate, 
 }
 

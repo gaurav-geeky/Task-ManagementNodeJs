@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import Form from './Pages/Form'
 import Layout from './Pages/Layout'
 import AdminDashBoard from './Admin/AdminDashBoard'
+import CreateUser from './Admin/CreateUser'
 
 
 function App() {
@@ -22,9 +23,10 @@ function App() {
       <Routes>
         <Route path="/admin-dashboard" element={<AdminDashBoard />}>
 
+          <Route path='create-user' element={<CreateUser />} />
 
         </Route>
-      </Routes > 
+      </Routes >
 
 
 
