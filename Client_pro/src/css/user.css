@@ -11,3 +11,13 @@ form label {
     margin-top: 100px;
     width: 100px; 
 }
+
+.userbody {
+    margin-left: 30px;
+}
+
+.userform {
+    border: 1px solid black; 
+    width: 300px; 
+    padding: 5px;
+}

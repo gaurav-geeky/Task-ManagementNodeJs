@@ -12,16 +12,20 @@ const AdminDashBoard = () => {
                 <p id='welcome'> Welcome {localStorage.getItem("adminname")} &nbsp;
                     Email : {localStorage.getItem("adminemail")} ! Logout
                 </p>
+                
 
                 <div id="admindata">
-                    <div id="adminmenu">
+
+                    <div id="adminmenu" style={{ margin: "10px", border: "1px solid black", width: "200px"}}>
                         <Link to="create-user">Create User</Link>
+                        <br />
+                        <Link to="assign-task"> Assign Task </Link>
                     </div>
 
                     <div id="admincontent">
-                        
                         <Outlet />
                     </div>
+
                 </div>
 
             </div>

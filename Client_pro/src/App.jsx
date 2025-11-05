@@ -5,6 +5,10 @@ import Form from './Pages/Form'
 import Layout from './Pages/Layout'
 import AdminDashBoard from './Admin/AdminDashBoard'
 import CreateUser from './Admin/CreateUser'
+import AssignTask from './Admin/AssignTask'
+
+import EmpDashboard from './Pages/EmpDashboard'
+
 
 
 function App() {
@@ -21,9 +25,17 @@ function App() {
 
 
       <Routes>
-        <Route path="/admin-dashboard" element={<AdminDashBoard />}>
+        <Route path="admin-dashboard" element={<AdminDashBoard />}>
 
           <Route path='create-user' element={<CreateUser />} />
+          <Route path='assign-task' element={<AssignTask />} />
+
+        </Route>
+      </Routes >
+
+
+      <Routes>
+        <Route path="emp-dashboard" element={<EmpDashboard />}>
 
         </Route>
       </Routes >

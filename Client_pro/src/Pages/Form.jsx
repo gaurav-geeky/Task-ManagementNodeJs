@@ -32,8 +32,19 @@ const Form = () => {
                 alert(error.response.data.msg);
             }
         }
+
         else {
-            alert("Invalid admin");
+            try {
+                let api = `${import.meta.env.VITE_BACK_URL}/employee/login`; 
+                const response = await axios.post(api, { email: email, password: password }); 
+
+                alert(response.data.msg); 
+                navigate("/emp-dashboard");
+            } 
+            catch (error) {
+                console.log(error) 
+                alert(error.response.data.msg)
+            }
         }
     }
 

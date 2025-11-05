@@ -1,6 +1,6 @@
 
 import axios from 'axios';
-import React, { useState } from 'react'  
+import React, { useState } from 'react'
 import "../css/user.css"
 
 const CreateUser = () => {
@@ -27,10 +27,10 @@ const CreateUser = () => {
 
     return (
         <>
-            <div>
+            <div className='userbody'>
                 <h1> Create New User</h1>
 
-                <form className='flex flex-col' >
+                <form className='flex flex-col userform' >
 
                     <label className='font-bold ' htmlFor=""> Employee Name</label>
                     <input
