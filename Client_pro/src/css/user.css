@@ -1,23 +1,62 @@
-form label {
-    margin-top: 10px;
+#userform {
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    height: 500px;
+    padding: 5px 15px;
+    position: relative; 
+    background-color: rgb(184, 230, 255); 
+    border-radius: 20px;   
+} 
+
+
+
+#userform h1 {
+    margin: 5px;
+    text-align: center;
+    font-family: var(--font2);
 }
 
-#userbtn {
-    background-color: pink;
-    font-weight: bold;
-    padding: 3px 13px;
+.userfrmlabel {
+    margin-top: 30px;
+    font-size: 25px;
+    font-family: var(--font1);
+}
+
+.userfrminput {
+    border: 1px solid black;
+    width: 20vw; 
+    border-radius: 5px;
+    padding: 2px 5px;
     font-size: 20px;
-    border-radius: 10px;
-    margin-top: 100px;
-    width: 100px; 
 }
 
-.userbody {
-    margin-left: 30px;
+#usersub {
+    background-color: rgb(238, 144, 224);
+    color: blue;
+    font-weight: bold;
+    font-family: var(--font1);
+    font-size: 25px;
+    padding: 5px 20px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px; 
+    border-radius: 50%; 
+    
 }
 
-.userform {
-    border: 1px solid black; 
-    width: 300px; 
-    padding: 5px;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  */

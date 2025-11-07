@@ -8,6 +8,7 @@ const EmpModel = require('../Model/empModel');
 const empModel = require('../Model/empModel');
 const taskModel = require('../Model/taskModel');
 
+
 const adminLogin = async (req, res) => {
     console.log(req.body);
     const { email, password } = req.body;
@@ -29,14 +30,17 @@ const adminLogin = async (req, res) => {
     }
 }
 
+
 const userCreate = async (req, res) => {
     const { empname, empmail, designation } = req.body;
-    const emppass = UserPassword.myPassword()
+    const emppass = UserPassword.myPassword()  // random password 
+
     console.log("pass generated : ", UserPassword.myPassword());
     res.send("okkk pass");
 
-    emailSend.userNodeMail(empname, empmail, emppass);
+    emailSend.userNodeMail(empname, empmail, emppass); // sending mail
 
+    // Now, usercreate after send user his details 
     const Employee = await EmpModel.create({
         name: empname,
         email: empmail,
@@ -48,10 +52,12 @@ const userCreate = async (req, res) => {
     res.status(201).send("user Successfully crreated !!");
 }
 
+
 const empDisplay = async (req, res) => {
     const employee = await empModel.find();
     res.status(200).send(employee);
 }
+
 
 const taskSave = async (req, res) => {
     console.log(req.body)
@@ -61,9 +67,11 @@ const taskSave = async (req, res) => {
         duration: duration,
         priority: priority,
         empid: id
-    })
-    res.status(201).send({ msg: "Task Successfully assigned ..." });
+    }) 
+    console.log("total task : ", task)
+    res.status(201).send({msg: "Task Successfully assigned ..." });
 }
+
 
 module.exports = {
     adminLogin,

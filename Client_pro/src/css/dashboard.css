@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@500&display=swap');
+
+:root {
+    --purple1: rgb(158, 46, 244);
+    --blue1: rgb(50, 50, 241);
+    --font2: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/*  admin dashboard */
+
+.admindashboard {
+    width: 100vw;
+    height: 100%;
+    background-color: rgb(220, 228, 251);
+}
+
+#adminheader {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 2.5vw;
+}
+
+#adminheader .welcome {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+#admin {
+    color: var(--blue1);
+    font-weight: 800;
+}
+
+#admin span {
+    color: black
+}
+
+.admincontainer {
+    display: flex;
+    min-height: 90vh;
+    width: 95vw;
+    /* border: 1px solid red; */
+    margin: 2vh auto;
+    border-radius: 20px;
+}
+
+#adminmenu {
+    display: flex;
+    flex-direction: column;
+    width: 15vw;
+    /* border: 1px solid black; */
+    padding: 20px;
+    background-color: var(--blue1);
+}
+
+#adminmenu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+#admindata {
+    width: 100vw;
+    /* border: 1px solid red; */
+    padding: 20px;
+    background-color: rgb(232, 245, 254);
+}
+
+
+
+
+
+/*  employee dashboard */
+
+.empdashboard {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(240, 223, 255);
+}
+
+#empheader {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 2.5vw;
+}
+
+#empheader .welcome {
+    font-size: 22px;
+    font-weight: 600;
+    /* border: 1px solid red;  */
+    margin-top: 13px;
+}
+
+#employee {
+    color: var(--purple1);
+    font-weight: 800;
+}
+
+#employee span {
+    color: black
+}
+
+.empcontainer {
+    display: flex;
+    min-height: 90vh;
+    width: 95vw;
+    /* border: 1px solid red; */
+    margin: 2vh auto;
+    border-radius: 20px;
+}
+
+#empmenu {
+    display: flex;
+    flex-direction: column;
+    width: 15vw;
+    /* border: 1px solid black; */
+    padding: 20px;
+    background-color: var(--purple1);
+    font-weight: bold;
+
+}
+
+#empmenu a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+#empdata {
+    width: 100vw;
+    /* border: 1px solid red; */
+    padding: 20px;
+    background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  */

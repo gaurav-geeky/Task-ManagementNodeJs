@@ -1,8 +1,9 @@
 
 const EmpModel = require("../Model/empModel");
+const TaskModel = require("../Model/taskModel")
 
 const empLogin = async (req, res) => {
-    console.log(req.body); 
+    console.log(req.body);
     const { email, password } = req.body;
 
     const employee = await EmpModel.findOne({ email: email });
@@ -18,6 +19,30 @@ const empLogin = async (req, res) => {
     res.status(200).send({ employee: employee, msg: "Employee logged in Succesfully !" });
 }
 
+
+const showTask = async (req, res) => {
+    const { id } = req.query;
+    const empData = await TaskModel.find({ empid: id });
+    res.status(200).send(empData);
+}
+
+const taskReport = async (req, res) => {
+    console.log(req.body)
+    //  = req.body; 
+    const { taskstatus, taskduration, taskId } = req.body;
+    const task = await TaskModel.findByIdAndUpdate(taskId, {
+        taskstatus: taskstatus,
+        completionday: taskduration,
+        submitstatus: true
+    })
+
+    res.send({ msg: "Task Submitted Successfully !! " });
+}
+
+
 module.exports = {
-    empLogin 
+    empLogin,
+    showTask,
+    taskReport,
+
 }

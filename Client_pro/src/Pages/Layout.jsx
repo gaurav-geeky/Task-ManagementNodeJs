@@ -7,13 +7,13 @@ function Layout() {
         <>
             <div>
 
-                <Header />
+                {/* <Header /> */}
 
-                <div style={{ width: "100%", height: "90vh", border: "1px solid black" }}>
+                <div style={{ width: "100%", height: "100vh", border: "1px solid black" }}>
                     <Outlet />
                 </div>
 
-                <Footer />
+                {/* <Footer /> */}
 
             </div>
         </>

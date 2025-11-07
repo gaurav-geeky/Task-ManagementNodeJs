@@ -28,21 +28,22 @@ const CreateUser = () => {
     return (
         <>
             <div className='userbody'>
-                <h1> Create New User</h1>
+                
 
-                <form className='flex flex-col userform' >
+                <form id='userform' >
+                    <h1> Create New User</h1>
 
-                    <label className='font-bold ' htmlFor=""> Employee Name</label>
+                    <label className='userfrmlabel' htmlFor=""> Employee Name</label>
                     <input
-                        className='border-2 pl-1 w-50 ' type="text" name='empname' onChange={handleInput} />
+                        className='userfrminput' placeholder='Enter employee name' type="text" name='empname' onChange={handleInput} />
 
-                    <label className='font-bold ' htmlFor="">Employee Mail</label>
+                    <label className='userfrmlabel' htmlFor="">Employee Mail</label>
                     <input
-                        className='border-2 pl-1 w-50 ' type="text" name='empmail' onChange={handleInput} />
+                        className='userfrminput' placeholder='Enter employee email' type="text" name='empmail' onChange={handleInput} />
 
-                    <label className='font-bold ' htmlFor="" >Select Designation </label>
+                    <label className='userfrmlabel' htmlFor="" >Select Designation </label>
 
-                    <select className='border-2 pl-1 w-50 '
+                    <select className='userfrminput'
                         name='designation' onChange={handleInput} >
                         <option aria-disabled > select designation </option>
                         <option value="Programmer">Programmer</option>
@@ -52,7 +53,7 @@ const CreateUser = () => {
                         <option value="DB Designer">DB Designer</option>
                     </select>
 
-                    <button id='userbtn' className=' ' type='submit' onClick={handleSubmit}>Submit</button>
+                    <button id='usersub' className=' ' type='submit' onClick={handleSubmit}>Submit</button>
                 </form >
             </div>
         </>

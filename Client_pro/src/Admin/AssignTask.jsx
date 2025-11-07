@@ -49,7 +49,8 @@ const AssignTask = () => {
     try {
       let api = `${import.meta.env.VITE_BACK_URL}/admin/tasksave`;
       const response = await axios.post(api, { id: uid, ...input });
-      console.log(response.data.msg);
+      alert(response.data.msg);
+
     } 
     catch (error) {
       console.log(error);
@@ -99,15 +100,16 @@ const AssignTask = () => {
 
         <Modal.Body>
           <Form>
+
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Enter Task</Form.Label>
-              <Form.Control type="text" name="task" onChange={handleInput} />
+              <Form.Control type="text" name="task" onChange={handleInput}  />
             </Form.Group>
-
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Enter Duration Days </Form.Label>
               <Form.Control type="text" name="duration" onChange={handleInput} />
             </Form.Group>
+
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Select Priority </Form.Label>
               <Form.Select aria-label="Default select example" name="priority" onChange={handleInput}>
@@ -117,9 +119,11 @@ const AssignTask = () => {
                 <option value="Low">Low Priority</option>
               </Form.Select>
             </Form.Group>
+
             <Button variant="primary" type="submit" onClick={handleSubmit}>
               Submit
             </Button>
+
           </Form>
         </Modal.Body>
 

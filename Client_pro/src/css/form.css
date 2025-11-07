@@ -1,73 +1,122 @@
 /*  user employee login body */
+
 * {
     margin: 0;
     margin: 0;
     overflow: hidden;
 }
 
-
-
 .loginbody {
-    background-image: url("../assets/bgtm11.jpg");
-    height: 90vh;
+    background-image: url("../assets/bgtm6.jpg");
+    height: 100vh;
     width: 100vw;
     background-size: cover;
     background-repeat: no-repeat;
+    position: relative;
 }
 
+#loghead {
+    color: white;
+    font-weight: 750;
+    font-size: 45px;
+    position: relative;
+    top: 25px;
+    left: 60px;
+}
 
-.form {
+.loginbody> p {
+    color: white;
+    font-weight: 650;
+    font-size: 35px;
+    position: absolute;
+    top: 13vh;
+    right: 20vw;
+}
+
+#logcontain {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid white; */
+    width: 75vw;
+    margin: 15vh auto;
+}
+
+.loginwelcome>div {
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.loginform {
     display: flex;
     flex-direction: column;
-    box-shadow: 2px 3px 20px 4px;
-    border-radius: 10px;
-    width: 35vw;
-    height: auto;
+    /* background-color: rgb(183, 116, 246); */
+    background-color: white;
+    width: 25vw;
+    height: 550px;
+    /* margin: auto; */
     padding: 10px 20px;
-    position: absolute;
-    top: 15vh;
-    left: 30vw;
-    z-index: inherit;
-    background-color: rgb(211, 230, 250);
+    position: relative;
+    border-radius: 20px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
 }
 
-.form img {
-    width: 50px;
-}
+/* rgb(183, 116, 246);    rgb(202, 202, 202); */
 
-.form #tasky {
-    color: blue;
-    margin-left: 10px;
-}
-
-.form label {
-    margin-top: 5px;
-}
-
-.form>div {
-    margin-bottom: 10px;
-}
-
-form h1 {
-    font-size: 32px;
+.loginform h1 {
     font-weight: 700;
 }
 
-.width {
-    width: 25vw;
-    border-radius: 5px;
-}
-
-.btnlog {
-    background-color: blue;
-    color: white;
+.loglabel {
+    font-size: 22px;
     font-weight: bold;
-    padding: 3px 13px;
-    font-size: 20px;
-    border-radius: 10px;
-    margin-top: 100px;
-    width: 100px; 
+    margin-top: 15px;
 }
 
+#loginlogo {
+    display: flex;
+    gap: 10px;
+}
 
-/*  */
+#tasky {
+    font-size: 30px;
+    color: blue;
+    font-weight: bolder;
+}
+
+#loginlogo img {
+    height: 50px;
+}
+
+.loginput {
+    border: 1px solid black;
+    padding: 2px 5px;
+    width: 20vw;
+    border-radius: 5px;
+    font-size: 20px;
+    /* color: white; */
+}
+
+#btnlog {
+    background-color: rgb(52, 52, 52);
+    font-weight: bold;
+    width: 90px;
+    border-radius: 8px;
+    color: white;
+    padding: 3px 10px;
+    position: absolute;
+    bottom: 10px;
+    font-size: 22px;
+
+}
+
+#loginside {
+    background-color: white;
+    width: 20vw;
+    height: 55vh;
+    margin: auto;
+    border-radius: 15px;
+}
