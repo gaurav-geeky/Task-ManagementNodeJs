@@ -2,6 +2,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import "../css/user.css"
+import logo1 from "../assets/loginside.png"
 
 const CreateUser = () => {
     const [userdata, setuserdata] = useState({});
@@ -28,33 +29,39 @@ const CreateUser = () => {
     return (
         <>
             <div className='userbody'>
-                
 
-                <form id='userform' >
-                    <h1> Create New User</h1>
+                <section id="userlogcontain">
+                    
+                    <form id='userform' >
+                        <h1> Create New User</h1>
 
-                    <label className='userfrmlabel' htmlFor=""> Employee Name</label>
-                    <input
-                        className='userfrminput' placeholder='Enter employee name' type="text" name='empname' onChange={handleInput} />
+                        <label className='userfrmlabel' htmlFor=""> Employee Name</label>
+                        <input
+                            className='userfrminput' placeholder='Enter employee name' type="text" name='empname' onChange={handleInput} />
 
-                    <label className='userfrmlabel' htmlFor="">Employee Mail</label>
-                    <input
-                        className='userfrminput' placeholder='Enter employee email' type="text" name='empmail' onChange={handleInput} />
+                        <label className='userfrmlabel' htmlFor="">Employee Mail</label>
+                        <input
+                            className='userfrminput' placeholder='Enter employee email' type="text" name='empmail' onChange={handleInput} />
 
-                    <label className='userfrmlabel' htmlFor="" >Select Designation </label>
+                        <label className='userfrmlabel' htmlFor="" >Select Designation </label>
 
-                    <select className='userfrminput'
-                        name='designation' onChange={handleInput} >
-                        <option aria-disabled > select designation </option>
-                        <option value="Programmer">Programmer</option>
-                        <option value="Tester">Tester</option>
-                        <option value="Designer">Designer</option>
-                        <option value="Analyst">Analyst</option>
-                        <option value="DB Designer">DB Designer</option>
-                    </select>
+                        <select className='userfrminput'
+                            name='designation' onChange={handleInput} >
+                            <option aria-disabled > select designation </option>
+                            <option value="Programmer">Programmer</option>
+                            <option value="Tester">Tester</option>
+                            <option value="Designer">Designer</option>
+                            <option value="Analyst">Analyst</option>
+                            <option value="DB Designer">DB Designer</option>
+                        </select>
+                        <button id='usersub' className=' ' type='submit' onClick={handleSubmit}>Submit</button>
+                    </form >
 
-                    <button id='usersub' className=' ' type='submit' onClick={handleSubmit}>Submit</button>
-                </form >
+                    <div id='frmImg'>
+                        <img src={logo1} alt="form" />
+                    </div>
+                </section>
+
             </div>
         </>
     )

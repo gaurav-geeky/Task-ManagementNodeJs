@@ -1,50 +1,103 @@
-# React + Vite
+user create form
+# responsivenes 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+/*   create user form  */
 
-Currently, two official plugins are available:
+.userbody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+/* image wrapper */
+#frmImg {
+    border: 1px solid red;
+    max-height: 60vh;
+    overflow: hidden;
+    flex: 1;                    /* allows flexible resizing */
+}
 
-## React Compiler
+#frmImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+/* container for image + form */
+#userlogcontain {
+    width: 80%;
+    max-width: 1100px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid gold;
+    margin: 100px auto;
+    gap: 20px;                /* spacing between form and image */
+}
 
-## Expanding the ESLint configuration
+/* user create form */
+#userform {
+    border: 1px solid blue;
+    flex: 1;                   /* allows flexible resizing */
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding: 20px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+}
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+#usersub {
+    background-color: rgb(102, 102, 255);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 6px 15px;
+    border-radius: 10px;
+    width: 120px;
+    align-self: center;        /* centers the button */
+    margin-top: auto;          /* pushes button to bottom */
+}
 
+/* ✅ RESPONSIVENESS FIX */
+@media (max-width: 900px) {
+    #userlogcontain {
+        flex-direction: column;
+        width: 95%;
+        margin-top: 50px;
+    }
 
+    #frmImg {
+        width: 100%;
+        max-height: 300px;
+    }
 
-# nodemailer code 
+    #userform {
+        width: 100%;
+    }
 
-// mailer.js
-const nodemailer = require("nodemailer");
+    #usersub {
+        position: static;     /* remove absolute position */
+        margin-top: 15px;
+    }
+}
 
-// Create transporter
-const transporter = nodemailer.createTransport({
-  service: "gmail", // or use host, port, auth for custom SMTP
-  auth: {
-    user: "your_email@gmail.com",
-    pass: "your_app_password", // Use App Password, not your real Gmail password
-  },
-});
+@media (max-width: 500px) {
+    #userform {
+        padding: 15px;
+    }
 
-// Email options
-const mailOptions = {
-  from: "your_email@gmail.com",
-  to: "receiver_email@example.com",
-  subject: "Test Email using Nodemailer",
-  text: "Hello! This is a test email sent using Node.js and Nodemailer.",
-  // html: "<b>Hello!</b> This is a <i>test</i> email."
-};
+    .userfrmlabel {
+        font-size: 16px;
+        margin-top: 20px;
+    }
 
-// Send email
-transporter.sendMail(mailOptions, (error, info) => {
-  if (error) {
-    console.error("Error sending email:", error);
-  } else {
-    console.log("Email sent successfully:", info.response);
-  }
-});
+    .userfrminput {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+}

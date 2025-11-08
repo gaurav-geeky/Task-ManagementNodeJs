@@ -33,15 +33,17 @@
     right: 20vw;
 }
 
+/* /////////////////////////////////////////////////////////////////////////////// */
 #logcontain {
     display: flex;
     align-items: center;
     justify-content: space-between;
     /* border: 1px solid white; */
-    width: 75vw;
+    width: 70vw;
     margin: 15vh auto;
 }
 
+/* /////////////////////////////////////////////////////////////////////////////// */
 .loginwelcome>div {
     color: white;
     font-weight: 400;
@@ -49,15 +51,16 @@
     margin-top: 30px;
 }
 
+/* /////////////////////////////////////////////////////////////////////////////// */
 .loginform {
     display: flex;
     flex-direction: column;
     /* background-color: rgb(183, 116, 246); */
     background-color: white;
-    width: 25vw;
+    width: 23vw;
     height: 550px;
     /* margin: auto; */
-    padding: 10px 20px;
+    padding: 20px 30px;
     position: relative;
     border-radius: 20px;
 
@@ -113,10 +116,4 @@
 
 }
 
-#loginside {
-    background-color: white;
-    width: 20vw;
-    height: 55vh;
-    margin: auto;
-    border-radius: 15px;
-}
+/* /////////////////////////////////////////////////////////////////////////////// */

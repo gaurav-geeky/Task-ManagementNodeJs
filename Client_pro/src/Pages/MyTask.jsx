@@ -104,13 +104,12 @@ const MyTask = () => {
           <Form>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
-
               <Form.Label>Select Task Status</Form.Label>
               <Form.Select aria-label="Default select example" value={taskstatus} onChange={(e) => setTaskStatus(e.target.value)} >
                 <option>select task status</option>
-                <option value="Fully Completed">Fully Completed</option>
-                <option value="Partial Completed">Partial Completed</option>
-                <option value="No Completed">No Completed</option>
+                <option value="FullyCompleted">Fully Completed</option>
+                <option value="PartialCompleted">Partial Completed</option>
+                <option value="NoCompleted">No Completed</option>
               </Form.Select>
             </Form.Group>
 

@@ -1,4 +1,5 @@
 
+
 const AdminModel = require('../Model/adminModel');
 const UserPassword = require('../middleware/randomPassword');
 // mailer.js
@@ -67,17 +68,41 @@ const taskSave = async (req, res) => {
         duration: duration,
         priority: priority,
         empid: id
-    }) 
+    })
     console.log("total task : ", task)
-    res.status(201).send({msg: "Task Successfully assigned ..." });
+    res.status(201).send({ msg: "Task Successfully assigned ..." });
 }
 
+
+const dashboardStats = async (req, res) => {
+    try {
+        const totalUsers = await empModel.countDocuments();
+
+        const totalTasks = await taskModel.countDocuments();
+        const completedTasks = await taskModel.countDocuments({ submitstatus: true });
+        const partiallyCompleted = await taskModel.countDocuments({ taskstatus: "Partially Completed" });
+        const pendingTasks = await taskModel.countDocuments({ submitstatus: false });
+
+        res.status(200).send({
+            totalUsers,
+            totalTasks,
+            completedTasks,
+            partiallyCompleted,
+            pendingTasks
+        });
+
+    } 
+    catch (error) {
+        console.log(error);
+        res.status(500).send({ msg: "Internal Server Error" });
+    }
+};
 
 module.exports = {
     adminLogin,
     userCreate,
     empDisplay,
     taskSave,
+    dashboardStats,
 }
-
 

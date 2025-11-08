@@ -1,4 +1,6 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+
 import {
     PieChart,
     Pie,
@@ -12,15 +14,42 @@ import {
     CartesianGrid,
 } from "recharts";
 
+
 const AdminHome = () => {
     // Sample data (you will replace this with API data later)
-    const dashboardStats = {
-        totalTasks: 50,
-        completedTasks: 30,
-        partiallyCompleted: 10,
-        pendingTasks: 10,
-        totalUsers: 8,
-    };
+    // const dashboardStats = {
+    //     totalTasks: 50,
+    //     completedTasks: 30,
+    //     partiallyCompleted: 10,
+    //     pendingTasks: 10,
+    //     totalUsers: 8,
+    // };
+
+
+    const [dashboardStats, setDashboardStats] = useState({
+        totalTasks: 0,
+        completedTasks: 0,
+        partiallyCompleted: 0,
+        pendingTasks: 0,
+        totalUsers: 0,
+    });
+
+    const loadDashboardData = async () => {
+        try {
+            let api = `${import.meta.env.VITE_BACK_URL}/admin/dashboard-stats`;
+            const response = await axios.get(api);
+            console.log(response.data);
+            setDashboardStats(response.data);
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    useEffect(() => {
+        loadDashboardData();
+    }, []);
+
+
 
     const pieData = [
         { name: "Completed", value: dashboardStats.completedTasks },
@@ -39,21 +68,22 @@ const AdminHome = () => {
             <div style={{ padding: "20px" }}>
                 <h1>Admin Dashboard</h1>
 
-                {/* Stats Cards */}
+                {/* Stats Cards                                     boxes */}
                 <div style={{
                     display: "flex",
                     gap: "20px",
                     marginTop: "20px",
                     flexWrap: "wrap",
-                }}>
-                    <div className="card">Total Tasks: {dashboardStats.totalTasks}</div>
+                    // border: "1px solid black"
+                }}> 
+                    <div className="card">Total Tasks: {dashboardStats.totalTasks}</div>  
                     <div className="card">Completed Tasks: {dashboardStats.completedTasks}</div>
                     <div className="card">Partially Completed: {dashboardStats.partiallyCompleted}</div>
                     <div className="card">Pending Tasks: {dashboardStats.pendingTasks}</div>
                     <div className="card">Total Users: {dashboardStats.totalUsers}</div>
                 </div>
 
-                {/* Charts Section */}
+                {/* Charts Section                      circle */}
                 <div style={{
                     display: "flex",
                     marginTop: "40px",
@@ -61,7 +91,7 @@ const AdminHome = () => {
                     flexWrap: "wrap",
                 }}>
                     {/* Pie Chart */}
-                    <div style={{ width: "400px", height: "300px" }}>
+                    <div style={{ width: "400px", height: "350px", }}>
                         <h3>Task Distribution</h3>
                         <ResponsiveContainer>
                             <PieChart>
@@ -81,8 +111,8 @@ const AdminHome = () => {
                         </ResponsiveContainer>
                     </div>
 
-                    {/* Bar Chart */}
-                    <div style={{ width: "400px", height: "300px" }}>
+                    {/* Bar Chart                                               bar building */}
+                    <div style={{ width: "400px", height: "300px", }}>
                         <h3>User vs Tasks</h3>
                         <ResponsiveContainer>
                             <BarChart data={barData}>
@@ -96,6 +126,7 @@ const AdminHome = () => {
                         </ResponsiveContainer>
                     </div>
                 </div>
+
             </div>
 
             {/* Styling */}

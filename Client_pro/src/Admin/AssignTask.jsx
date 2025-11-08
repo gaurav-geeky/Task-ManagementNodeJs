@@ -36,7 +36,6 @@ const AssignTask = () => {
   }, [])
 
   // 
-
   const handleInput = (e) => {
     let name = e.target.name;
     let value = e.target.value;
@@ -50,17 +49,20 @@ const AssignTask = () => {
       let api = `${import.meta.env.VITE_BACK_URL}/admin/tasksave`;
       const response = await axios.post(api, { id: uid, ...input });
       alert(response.data.msg);
-
     } 
     catch (error) {
       console.log(error);
     }
   }
 
+  // getting each employee data also emp ID  
+  let sno = 0; 
   const ans = mydata.map((key) => {
+    sno++; 
     return (
       <>
         <tr>
+          <td> {sno} </td>
           <td> {key.name} </td>
           <td> {key.designation} </td>
           <td> {key.email} </td>
@@ -77,9 +79,10 @@ const AssignTask = () => {
     <>
       <h1> Assign Task</h1>
 
-      <Table striped bordered hover>
+      <Table style={{textAlign: "center"}} striped bordered hover>
         <thead>
           <tr>
+            <th>sno</th>
             <th>Employee Name</th>
             <th>Designation</th>
             <th>Email</th>
@@ -99,7 +102,7 @@ const AssignTask = () => {
         </Modal.Header>
 
         <Modal.Body>
-          <Form>
+          <Form >
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Enter Task</Form.Label>

@@ -32,6 +32,8 @@
 #adminheader .welcome {
     font-size: 22px;
     font-weight: 600;
+    display: flex;
+    flex-direction: column;
 }
 
 #admin {
@@ -58,12 +60,21 @@
     width: 15vw;
     /* border: 1px solid black; */
     padding: 20px;
-    background-color: var(--blue1);
+    /* background-color: var(--blue1); */
+    background-color: rgb(125, 125, 255);
 }
 
 #adminmenu a {
+    color: black;
     text-decoration: none;
-    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+    /* border: 1px solid red; */
+    max-width: 180px;
+    background-color: #bcd7ff;;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-align: center; 
     font-weight: bold;
 }
 
@@ -71,7 +82,7 @@
     width: 100vw;
     /* border: 1px solid red; */
     padding: 20px;
-    background-color: rgb(232, 245, 254);
+    background: linear-gradient(to bottom, rgb(125, 125, 255) 0%, rgb(167, 223, 246) 50%, lightblue 100%);
 }
 
 
@@ -97,6 +108,8 @@
     font-weight: 600;
     /* border: 1px solid red;  */
     margin-top: 13px;
+    display: flex;
+    flex-direction: column;
 }
 
 #employee {
@@ -120,19 +133,25 @@
 #empmenu {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 15vw;
     /* border: 1px solid black; */
     padding: 20px;
     background-color: var(--purple1);
-    font-weight: bold;
-
 }
 
 #empmenu a {
-    color: white;
+    color: black;
     text-decoration: none;
     font-size: 20px;
     margin-top: 20px;
+    /* border: 1px solid red; */
+    max-width: 180px;
+    background-color: rgb(224 183 255);;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
 }
 
 #empdata {
@@ -143,7 +162,15 @@
 }
 
 
+.logout {
+    /* border: 1px solid red;  */
+    color: red;
+    font-size: 20px;
+    text-align: end;
+    padding-right: 10px;
+    font-weight: bold;
 
+}
 
 
 
