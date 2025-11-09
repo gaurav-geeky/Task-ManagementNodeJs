@@ -30,6 +30,8 @@ const CreateUser = () => {
         <>
             <div className='userbody'>
 
+                <h1>Empower your team by giving them access to their workspace.</h1>
+
                 <section id="userlogcontain">
                     
                     <form id='userform' >

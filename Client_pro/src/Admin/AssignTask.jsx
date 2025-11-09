@@ -5,6 +5,7 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
+import "../css/dashboard.css"
 
 const AssignTask = () => {
   const [mydata, setMydata] = useState([]);  // to get data of employe to assign task
@@ -49,16 +50,16 @@ const AssignTask = () => {
       let api = `${import.meta.env.VITE_BACK_URL}/admin/tasksave`;
       const response = await axios.post(api, { id: uid, ...input });
       alert(response.data.msg);
-    } 
+    }
     catch (error) {
       console.log(error);
     }
   }
 
   // getting each employee data also emp ID  
-  let sno = 0; 
+  let sno = 0;
   const ans = mydata.map((key) => {
-    sno++; 
+    sno++;
     return (
       <>
         <tr>
@@ -79,21 +80,22 @@ const AssignTask = () => {
     <>
       <h1> Assign Task</h1>
 
-      <Table style={{textAlign: "center"}} striped bordered hover>
-        <thead>
-          <tr>
-            <th>sno</th>
-            <th>Employee Name</th>
-            <th>Designation</th>
-            <th>Email</th>
-            <th> Assign Button</th>
-          </tr>
-        </thead>
-        <tbody>
-          {ans}
-        </tbody>
-      </Table>
-
+      <div className="custom-table-wrapper">
+        <Table className="custom-table" striped bordered hover>
+          <thead>
+            <tr>
+              <th>sno</th>
+              <th>Employee Name</th>
+              <th>Designation</th>
+              <th>Email</th>
+              <th> Assign Button</th>
+            </tr>
+          </thead>
+          <tbody>
+            {ans}
+          </tbody>
+        </Table>
+      </div>
 
 
       <Modal show={show} onHide={handleClose}>
@@ -106,7 +108,7 @@ const AssignTask = () => {
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Enter Task</Form.Label>
-              <Form.Control type="text" name="task" onChange={handleInput}  />
+              <Form.Control type="text" name="task" onChange={handleInput} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Enter Duration Days </Form.Label>

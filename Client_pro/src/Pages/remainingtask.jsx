@@ -8,7 +8,7 @@ import "../css/employee.css"
 import "../css/dashboard.css"
 
 
-const MyTask = () => {
+const Remainingtask = () => {
   const [mydata, setmydata] = useState([]);
   const [show, setShow] = useState(false);
 
@@ -58,7 +58,7 @@ const MyTask = () => {
   let sno = 0;
   const ans = mydata.map((key) => {
     sno++;
-    // if (!key.submitstatus) {
+    if (!key.submitstatus) {
       return (
         <>
           <tr>
@@ -66,18 +66,18 @@ const MyTask = () => {
             <td>{key.task}</td>
             <td>{key.duration}</td>
             <td>{key.priority}</td>
-            {/* <td>
+            <td>
               <Button variant="success" onClick={() => { handleShow(key._id) }}> Send Report!</Button>
-            </td> */}
+            </td>
           </tr>
         </>
       )
-    // }
+    }
   })
 
   return (
     <>
-      <h1>My Task details</h1>
+      <h1>Remaining Tasks</h1>
       <hr />
       {/*                     here get emp data in table  */}
 
@@ -89,7 +89,7 @@ const MyTask = () => {
               <th>Task Detail</th>
               <th>Duration in Days</th>
               <th>Priority Level</th>
-              {/* <th></th> */}
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -101,9 +101,11 @@ const MyTask = () => {
       {/*                     here assign task to each emp  */}
 
       <Modal show={show} onHide={handleClose}>
+
         <Modal.Header closeButton>
           <Modal.Title>Your Task Report</Modal.Title>
         </Modal.Header>
+
         <Modal.Body>
           <Form>
 
@@ -117,24 +119,23 @@ const MyTask = () => {
               </Form.Select>
             </Form.Group>
 
-
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Completion Days</Form.Label>
               <Form.Control type="text" value={taskduration} onChange={(e) => setTaskDuration(e.target.value)} />
             </Form.Group>
 
-
             <Button variant="primary" type="submit" onClick={taskReportSubmit}>
               Submit Report
             </Button>
-
           </Form>
+
         </Modal.Body>
+
       </Modal>
 
     </>
   )
 }
 
-export default MyTask;
+export default Remainingtask;
 

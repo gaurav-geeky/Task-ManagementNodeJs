@@ -28,16 +28,21 @@ const AdminDashBoard = () => {
 
                 {/* <div className='logout'>Logout</div> */}
                 
+
                 <div className="admincontainer">
                     <div id="adminmenu">
                         <Link to="/admin-dashboard"> Admin Home</Link>
                         <Link to="create-user">Create User</Link>
                         <Link to="assign-task"> Assign Task </Link>
+
+                        {/* <Link>sd sd</Link> */}
                     </div>
                     <div id="admindata">
                         <Outlet />
+                        {/* <p>sg</p> */}
                     </div>
                 </div>
+                
 
             </div>
         </>

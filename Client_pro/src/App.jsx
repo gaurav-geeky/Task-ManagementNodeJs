@@ -15,6 +15,8 @@ import EmpDashboard from './Pages/EmpDashboard'
 import MyTask from './Pages/MyTask'
 import SubmittedTask from './Pages/SubmittedTask'
 import EmpHome from './Pages/EmpHome'
+import Remainingtask from './Pages/remainingtask'
+
 
 
 function App() {
@@ -43,9 +45,10 @@ function App() {
       <Routes>
         <Route path="emp-dashboard" element={<EmpDashboard />}>
 
+          <Route index element={<EmpHome />} />
           <Route path='mytask' element={<MyTask />} />
           <Route path='submitedtask' element={<SubmittedTask />} />
-          <Route index element={<EmpHome />} />
+          <Route path='remainingTask' element={<Remainingtask />} />
 
         </Route>
       </Routes >

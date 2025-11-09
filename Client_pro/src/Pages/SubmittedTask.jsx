@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Table from 'react-bootstrap/esm/Table';
-
+import "../css/employee.css"
+import "../css/dashboard.css"
 
 const SubmittedTask = () => {
     const [mydata, setmydata] = useState([]);
@@ -47,20 +48,21 @@ const SubmittedTask = () => {
                 <h1> Tasks You have submitted </h1>
                 <hr />
 
-                <Table striped bordered hover>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Task Detail</th>
-                            <th>Duration in Days</th>
-                            <th>Priority Level</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {ans}
-                    </tbody>
-                </Table>
-
+                <div className="custom-table-wrapper">
+                    <Table className="custom-table" striped bordered hover>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Task Detail</th>
+                                <th>Duration in Days</th>
+                                <th>Priority Level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {ans}
+                        </tbody>
+                    </Table>
+                </div>
 
 
             </div>

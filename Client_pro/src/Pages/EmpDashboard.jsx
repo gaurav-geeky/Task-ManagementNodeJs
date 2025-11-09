@@ -28,8 +28,9 @@ const EmpDashboard = () => {
 
                     <div id="empmenu">
                         <Link to="/emp-dashboard"> Employee Home</Link>
-                        <Link to="mytask">My Tasks</Link>
+                        <Link to="mytask">Total Tasks</Link>
                         <Link to="submitedtask"> Submitted Tasks</Link>
+                        <Link to="remainingTask"> Remaining Tasks</Link>
 
                     </div>
 

@@ -39,10 +39,18 @@ const taskReport = async (req, res) => {
     res.send({ msg: "Task Submitted Successfully !! " });
 }
 
+const empData = async (req, res) => {
+    console.log(req.query);
+    const { id } = req.query;
+    const empData = await TaskModel.find({ empid: id }); 
+    res.status(200).send(empData);
+}
+
 
 module.exports = {
     empLogin,
     showTask,
     taskReport,
+    empData,
 
 }
