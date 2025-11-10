@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import "../css/dashboard.css"
+import { toast } from "react-toastify";
 
 const AssignTask = () => {
   const [mydata, setMydata] = useState([]);  // to get data of employe to assign task
@@ -49,7 +50,8 @@ const AssignTask = () => {
     try {
       let api = `${import.meta.env.VITE_BACK_URL}/admin/tasksave`;
       const response = await axios.post(api, { id: uid, ...input });
-      alert(response.data.msg);
+      toast.success(response.data.msg);
+      setShow(false); 
     }
     catch (error) {
       console.log(error);

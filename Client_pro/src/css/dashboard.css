@@ -184,12 +184,24 @@
     border-radius: 12px;
     overflow: hidden;
     /* 👈 Allows rounded corners to show */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); 
-    max-height: 75vh; 
-    
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    max-height: 75vh;
+
 }
 
 /* Styling the table */
+
+.custom-table-wrapper {
+    max-height: 68vh;
+    /* ✅ fixed height */
+    overflow-y: auto;
+    /* ✅ enables scroll */
+    overflow-x: hidden;
+    /* optional */
+    width: 100%;
+    scrollbar-width: none;
+}
+
 .custom-table {
     border-collapse: separate !important;
     /* 👈 Forces Bootstrap to allow radius */
@@ -242,7 +254,23 @@
 
 
 
+/* Active menu highlight */
 
+#empmenu a.empactive-menu {
+    background-color: white !important;
+    color: var(--purple1) !important;
+    border: 2px solid white;
+    transform: scale(1.05);
+    transition: 0.25s ease-in-out;
+}
+
+#adminmenu a.adminactive-menu {
+    background-color: white !important; 
+    color: var(--blue1) !important;
+    border: 2px solid white;
+    transform: scale(1.05);
+    transition: 0.25s ease-in-out;
+}
 
 
 

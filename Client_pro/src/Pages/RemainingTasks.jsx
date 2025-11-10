@@ -7,14 +7,17 @@ import Form from 'react-bootstrap/Form';
 import "../css/employee.css"
 import "../css/dashboard.css"
 
+import { ToastContainer, toast } from 'react-toastify';
 
-const Remainingtask = () => {
+
+const RemainingTasks = () => {
   const [mydata, setmydata] = useState([]);
   const [show, setShow] = useState(false);
 
   const [taskstatus, setTaskStatus] = useState("");
   const [taskduration, setTaskDuration] = useState("");
   const [taskId, setTaskId] = useState("");
+
 
   const handleClose = () => setShow(false);   // not show form pop up . inital false
 
@@ -23,6 +26,8 @@ const Remainingtask = () => {
     setShow(true);
   };
   // only to show pop up 
+
+
 
   const loadData = async () => {
     try {
@@ -47,11 +52,13 @@ const Remainingtask = () => {
     try {
       let api = `${import.meta.env.VITE_BACK_URL}/employee/taskreport`;
       const response = await axios.put(api, { taskstatus, taskduration, taskId });
-      console.log(response.data.msg);
+      toast.success(response.data.msg);
+      setShow(false);
     }
     catch (error) {
       console.log(error);
     }
+    loadData();
   }
 
 
@@ -77,7 +84,7 @@ const Remainingtask = () => {
 
   return (
     <>
-      <h1>Remaining Tasks</h1>
+      <h1> Remaining all tasks to be submitted</h1>
       <hr />
       {/*                     here get emp data in table  */}
 
@@ -101,11 +108,9 @@ const Remainingtask = () => {
       {/*                     here assign task to each emp  */}
 
       <Modal show={show} onHide={handleClose}>
-
         <Modal.Header closeButton>
           <Modal.Title>Your Task Report</Modal.Title>
         </Modal.Header>
-
         <Modal.Body>
           <Form>
 
@@ -119,23 +124,26 @@ const Remainingtask = () => {
               </Form.Select>
             </Form.Group>
 
+
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Completion Days</Form.Label>
               <Form.Control type="text" value={taskduration} onChange={(e) => setTaskDuration(e.target.value)} />
             </Form.Group>
 
+
             <Button variant="primary" type="submit" onClick={taskReportSubmit}>
               Submit Report
             </Button>
+
           </Form>
-
         </Modal.Body>
-
       </Modal>
 
     </>
   )
 }
 
-export default Remainingtask;
+export default RemainingTasks;
+
+
 

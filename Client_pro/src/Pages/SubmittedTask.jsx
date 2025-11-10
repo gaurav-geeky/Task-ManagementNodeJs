@@ -34,7 +34,7 @@ const SubmittedTask = () => {
                         <td>{key.task}</td>
                         <td>{key.duration}</td>
                         <td>{key.priority}</td>
-                    </tr>
+                    </tr> 
                 </>
             )
         }

@@ -16,12 +16,16 @@ const MyTask = () => {
   const [taskduration, setTaskDuration] = useState("");
   const [taskId, setTaskId] = useState("");
 
+
+  const [search, setSearch] = useState("");
+
+
   const handleClose = () => setShow(false);   // not show form pop up . inital false
 
-  const handleShow = (tid) => {
-    setTaskId(tid);
-    setShow(true);
-  };
+  // const handleShow = (tid) => {
+  //   setTaskId(tid);
+  //   setShow(true);
+  // };
   // only to show pop up 
 
   const loadData = async () => {
@@ -55,31 +59,54 @@ const MyTask = () => {
   }
 
 
+  const filteredData = mydata.filter((each) =>
+    each.task.toLowerCase().includes(search.toLowerCase())
+  );
+
   let sno = 0;
-  const ans = mydata.map((key) => {
+  const ans = filteredData.map((key) => {
     sno++;
     // if (!key.submitstatus) {
-      return (
-        <>
-          <tr>
-            <td> {sno} </td>
-            <td>{key.task}</td>
-            <td>{key.duration}</td>
-            <td>{key.priority}</td>
-            {/* <td>
-              <Button variant="success" onClick={() => { handleShow(key._id) }}> Send Report!</Button>
-            </td> */}
-          </tr>
-        </>
-      )
+    return (
+      <>
+        <tr>
+          <td> {sno} </td>
+          <td>{key.task}</td>
+          <td>{key.duration}</td>
+          <td>{key.priority}</td>
+          {/* <td>{assign task handleshow button}</td> */}
+        </tr>
+      </>
+    )
     // }
   })
+
+
 
   return (
     <>
       <h1>My Task details</h1>
       <hr />
-      {/*                     here get emp data in table  */}
+
+      {/*                            Search Your data here     */}
+
+      <div id='searchtaskbar'>
+        <span> Search your task here..</span>
+        <input
+        
+          id='searchtask'
+          type="text"
+          placeholder="🔍 Enter task name..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+
+        <button id='searchbtn'>Search it</button>
+      </div>
+
+
+      <hr />
+      {/*                     here get emp data in table css dashboard  */}
 
       <div className="custom-table-wrapper">
         <Table className="custom-table" striped bordered hover>

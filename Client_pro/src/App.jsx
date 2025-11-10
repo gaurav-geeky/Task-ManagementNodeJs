@@ -4,19 +4,23 @@ import { Route, Routes } from 'react-router-dom'
 import Form from './Pages/Form'
 import Layout from './Pages/Layout'
 
-
+// admin 
 import AdminDashBoard from './Admin/AdminDashBoard'
 import CreateUser from './Admin/CreateUser'
 import AssignTask from './Admin/AssignTask'
 import AdminHome from './Admin/AdminHome'
+import Report from './Admin/Report'
 
 
+// employee
 import EmpDashboard from './Pages/EmpDashboard'
 import MyTask from './Pages/MyTask'
 import SubmittedTask from './Pages/SubmittedTask'
 import EmpHome from './Pages/EmpHome'
-import Remainingtask from './Pages/remainingtask'
+import RemainingTasks from './Pages/RemainingTasks'
 
+
+import { ToastContainer, toast } from 'react-toastify';
 
 
 function App() {
@@ -38,6 +42,7 @@ function App() {
           <Route index element={<AdminHome />} />
           <Route path='create-user' element={<CreateUser />} />
           <Route path='assign-task' element={<AssignTask />} />
+          <Route path='report' element={<Report />} />
         </Route>
       </Routes >
 
@@ -48,13 +53,12 @@ function App() {
           <Route index element={<EmpHome />} />
           <Route path='mytask' element={<MyTask />} />
           <Route path='submitedtask' element={<SubmittedTask />} />
-          <Route path='remainingTask' element={<Remainingtask />} />
+          <Route path='remainingTask' element={<RemainingTasks />} />
 
         </Route>
       </Routes >
 
-
-
+      <ToastContainer theme="dark" />
     </>
   )
 }

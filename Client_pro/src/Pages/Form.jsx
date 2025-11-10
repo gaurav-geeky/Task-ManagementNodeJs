@@ -5,9 +5,11 @@ import { useState } from 'react'
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../css/form.css"
-// import "../css/try.css"
+
 import logo from "../assets/loginLogo.png"
 import logo1 from "../assets/tasklogo.png"
+
+import { ToastContainer, toast } from 'react-toastify';
 
 const Form = () => {
 
@@ -26,12 +28,12 @@ const Form = () => {
                 localStorage.setItem("adminname", response.data.Admin.name);
                 localStorage.setItem("adminemail", response.data.Admin.email);
 
-                alert(response.data.msg);
+                toast.success(response.data.msg);
                 navigate("/admin-dashboard");
             }
             catch (error) {
                 console.log(error);
-                alert(error.response.data.msg);
+                toast.warning(error.response.data.msg);
             }
         }
 
@@ -45,12 +47,12 @@ const Form = () => {
                 localStorage.setItem("empdesignation", response.data.employee.designation);
                 localStorage.setItem("empid", response.data.employee._id);
 
-                alert(` welcome ${response.data.employee.name}`);
+                toast.success(` welcome ${response.data.employee.name}`);
                 navigate("/emp-dashboard");
             }
             catch (error) {
                 console.log(error)
-                alert(error.response.data.msg)
+                toast.warning(error.response.data.msg)
             }
         }
     }
@@ -74,7 +76,7 @@ const Form = () => {
                         </div>
                     </div>
 
-                    
+
                     <form className='loginform'>
 
                         <div id='loginlogo'>
@@ -115,6 +117,7 @@ const Form = () => {
                         </select>
 
                         <button id='btnlog' type='submit' onClick={handleSubmit}>Login</button>
+
                     </form >
 
                 </section>

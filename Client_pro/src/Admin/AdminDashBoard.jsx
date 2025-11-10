@@ -1,7 +1,7 @@
 
 import React from 'react'
 import "../css/dashboard.css"
-import { Link, Outlet, useNavigate } from 'react-router-dom'
+import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom'
 
 
 const AdminDashBoard = () => {
@@ -10,7 +10,7 @@ const AdminDashBoard = () => {
 
     let navigate = useNavigate();
 
-    const logout = ()=> {
+    const logout = () => {
         navigate("/")
     }
 
@@ -20,20 +20,33 @@ const AdminDashBoard = () => {
 
                 <div id="adminheader">
                     <h1 id='admin'>Admin <span>Dashboard</span>  </h1>
-                    <div className='welcome'> 
+                    <div className='welcome'>
                         Welcome, {adminname} &ensp; {adminemail}
                         <button className='logout' onClick={logout} >Logout</button>
                     </div>
                 </div>
 
                 {/* <div className='logout'>Logout</div> */}
-                
+
 
                 <div className="admincontainer">
+
                     <div id="adminmenu">
-                        <Link to="/admin-dashboard"> Admin Home</Link>
-                        <Link to="create-user">Create User</Link>
-                        <Link to="assign-task"> Assign Task </Link>
+                        <NavLink
+                            className={({ isActive }) => (isActive ? "adminactive-menu" : "")}
+                            to="/admin-dashboard" end > Admin Home</NavLink>
+
+                        <NavLink
+                            className={({ isActive }) => (isActive ? "adminactive-menu" : "")}
+                            to="create-user" >Create User</NavLink>
+
+                        <NavLink
+                            className={({ isActive }) => (isActive ? "adminactive-menu" : "")}
+                            to="assign-task" > Assign Task </NavLink>
+
+                        <NavLink
+                            className={({ isActive }) => (isActive ? "adminactive-menu" : "")}
+                            to="report" > Report </NavLink>
 
                         {/* <Link>sd sd</Link> */}
                     </div>
@@ -42,7 +55,7 @@ const AdminDashBoard = () => {
                         {/* <p>sg</p> */}
                     </div>
                 </div>
-                
+
 
             </div>
         </>

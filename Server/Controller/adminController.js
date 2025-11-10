@@ -31,13 +31,13 @@ const adminLogin = async (req, res) => {
     }
 }
 
-
+// create new employee
 const userCreate = async (req, res) => {
     const { empname, empmail, designation } = req.body;
     const emppass = UserPassword.myPassword()  // random password 
 
     console.log("pass generated : ", UserPassword.myPassword());
-    res.send("okkk pass");
+    res.send("User created successfully !");
 
     emailSend.userNodeMail(empname, empmail, emppass); // sending mail
 
@@ -53,13 +53,13 @@ const userCreate = async (req, res) => {
     res.status(201).send("user Successfully crreated !!");
 }
 
-
+// disply employee to give task
 const empDisplay = async (req, res) => {
     const employee = await empModel.find();
     res.status(200).send(employee);
 }
 
-
+// assign task 
 const taskSave = async (req, res) => {
     console.log(req.body)
     const { id, task, duration, priority } = req.body;
@@ -91,12 +91,25 @@ const dashboardStats = async (req, res) => {
             pendingTasks
         });
 
-    } 
+    }
     catch (error) {
         console.log(error);
         res.status(500).send({ msg: "Internal Server Error" });
     }
 };
+
+const taskReportDisplay = async (req, res) => {
+    const taskreport = await taskModel.find({ submitstatus: true }).populate("empid");
+    res.status(201).send(taskreport);
+}
+
+const taskReassign = async (req, res) => {
+    const task = await taskModel.findByIdAndUpdate(req.query.id, {
+        submitstatus: false
+    });
+    res.status(201).send({ msg: "Task has been Reassigned ..." });
+}
+
 
 module.exports = {
     adminLogin,
@@ -104,5 +117,8 @@ module.exports = {
     empDisplay,
     taskSave,
     dashboardStats,
+    taskReportDisplay,
+    taskReassign
+
 }
 

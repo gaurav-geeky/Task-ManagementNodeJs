@@ -11,6 +11,8 @@ route.get("/empdisplay", AdminController.empDisplay);
 route.post("/tasksave", AdminController.taskSave); 
 
 route.get("/dashboard-stats", AdminController.dashboardStats);
+route.get("/taskreportdisplay", AdminController.taskReportDisplay);
+route.get("/taskreassign", AdminController.taskReassign);
  
 
 module.exports = route;

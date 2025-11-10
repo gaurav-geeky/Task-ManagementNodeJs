@@ -4,6 +4,9 @@ import React, { useState } from 'react'
 import "../css/user.css"
 import logo1 from "../assets/loginside.png"
 
+import { ToastContainer, toast } from 'react-toastify';
+
+
 const CreateUser = () => {
     const [userdata, setuserdata] = useState({});
 
@@ -19,7 +22,7 @@ const CreateUser = () => {
         try {
             let api = `${import.meta.env.VITE_BACK_URL}/admin/usercreate`;
             const response = await axios.post(api, userdata);
-            console.log(response.data);
+            toast.success(response.data);
 
         } catch (error) {
             console.log(error)
