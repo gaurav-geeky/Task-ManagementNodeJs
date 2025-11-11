@@ -18,7 +18,7 @@ import MyTask from './Pages/MyTask'
 import SubmittedTask from './Pages/SubmittedTask'
 import EmpHome from './Pages/EmpHome'
 import RemainingTasks from './Pages/RemainingTasks'
-
+import Settings from './Pages/Settings'
 
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -54,6 +54,7 @@ function App() {
           <Route path='mytask' element={<MyTask />} />
           <Route path='submitedtask' element={<SubmittedTask />} />
           <Route path='remainingTask' element={<RemainingTasks />} />
+          <Route path='settings' element={<Settings />} />
 
         </Route>
       </Routes >

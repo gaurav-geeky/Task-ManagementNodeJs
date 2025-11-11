@@ -165,6 +165,9 @@
     background: linear-gradient(to bottom, rgb(194, 123, 248) 0%, rgb(243, 167, 246) 50%, rgb(219, 183, 234) 100%);
 }
 
+.welcome>div {
+    display: flex;
+}
 .logout {
     /* border: 1px solid red;  */
     color: red;

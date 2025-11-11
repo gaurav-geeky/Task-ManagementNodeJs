@@ -46,6 +46,7 @@ const Form = () => {
                 localStorage.setItem("empmail", response.data.employee.mail);
                 localStorage.setItem("empdesignation", response.data.employee.designation);
                 localStorage.setItem("empid", response.data.employee._id);
+                localStorage.setItem("empPass", response.data.employee.password);
 
                 toast.success(` welcome ${response.data.employee.name}`);
                 navigate("/emp-dashboard");

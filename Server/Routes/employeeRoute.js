@@ -7,6 +7,7 @@ route.post("/login", EmpController.empLogin);
 route.get("/showtask", EmpController.showTask);
 route.put("/taskreport", EmpController.taskReport);
 route.get("/empdata", EmpController.empData);
+route.post("/changepass", EmpController.changePassword);
 
 
 module.exports = route; 

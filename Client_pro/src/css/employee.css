@@ -2,9 +2,8 @@
 
 #emphome {
     width: 79vw;
-    height: auto;
     /* border: 1px solid rgb(173, 8, 8); */
-    height: 80vh;
+    min-height: 85vh;
 }
 
 #emphome>p {
@@ -47,6 +46,10 @@
 
 }
 
+.emphometask p {
+    font-family: 'Times New Roman' !important;
+}
+
 .emphometask:hover {
     background-color: rgb(178, 88, 246);
     color: white;
@@ -80,9 +83,9 @@
 }
 
 #searchtask {
-    padding: 2px 5px; 
+    padding: 2px 5px;
     font-size: 20px;
-    border: 1px solid whitesmoke; 
+    border: 1px solid whitesmoke;
     border-radius: 10px;
     width: 20%;
 }
@@ -97,11 +100,68 @@
 }
 
 
+/*    change password css */
 
+#empsetting {
+    width: 79vw;
+    border: 1px solid rgb(173, 8, 8);
+    min-height: 85vh;
+}
 
+#empsetting>h1 {
+    padding: 20px 30px;
+}
 
+#passform { 
+    border: 3px solid rgb(210, 140, 251);
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    font-family: 'Times New Roman';
+    padding: 3px 10px;
+    width: 500px;
+    height: 550px;
+    margin: 50px auto;
+    background-color: white; 
+    border-radius: 20px;
+    color: rgb(0, 0, 178); 
+    position: relative;
+}
 
+#passform #passkey {
+    width: 100px;
+    border-radius: 50%;
+    background-color: rgb(64, 64, 249);
+    position: relative;
+    top: 5px; 
+    left: 5vw;
+    
+}
 
+.passlabel {
+    font-size: 22px;
+    margin-top: 15px;
+}
+
+.passinput {
+    border: 1px solid black;
+    width: 300px;
+    padding: 3px 6px;
+    font-size: 20px;
+}
+
+#subpass {
+    background-color: blue;
+    color: white;
+    width: 100px;
+    padding: 3px 7px; 
+    font-size: 22px;
+    font-weight: bold; 
+    border-radius: 8px;
+    position: absolute;
+    bottom: 20px;
+    
+}
 
 
 

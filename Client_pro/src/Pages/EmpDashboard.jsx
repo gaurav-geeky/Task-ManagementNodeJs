@@ -58,6 +58,11 @@ const EmpDashboard = () => {
                             className={({ isActive }) => (isActive ? "empactive-menu" : "")} >
                             Remaining Tasks
                         </NavLink>
+
+                        <NavLink to="settings"
+                            className={({ isActive }) => (isActive ? "empactive-menu" : "")} >
+                             Settings
+                        </NavLink>
                     </div>
 
 

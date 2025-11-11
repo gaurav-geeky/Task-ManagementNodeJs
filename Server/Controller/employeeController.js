@@ -1,4 +1,5 @@
 
+const empModel = require("../Model/empModel");
 const EmpModel = require("../Model/empModel");
 const TaskModel = require("../Model/taskModel")
 
@@ -42,8 +43,16 @@ const taskReport = async (req, res) => {
 const empData = async (req, res) => {
     console.log(req.query);
     const { id } = req.query;
-    const empData = await TaskModel.find({ empid: id }); 
+    const empData = await TaskModel.find({ empid: id });
     res.status(200).send(empData);
+}
+
+const changePassword = async (req, res) => {
+    const { empId, newpass } = req.body
+    const changepass = await empModel.findByIdAndUpdate(empId, {
+        password: newpass
+    });
+    res.status(201).send({ mypass: changepass, msg: "Emp Pass changed successfully !!" });
 }
 
 
@@ -52,5 +61,6 @@ module.exports = {
     showTask,
     taskReport,
     empData,
+    changePassword,
 
 }
