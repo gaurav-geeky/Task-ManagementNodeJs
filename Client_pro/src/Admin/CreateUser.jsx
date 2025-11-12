@@ -22,7 +22,8 @@ const CreateUser = () => {
         try {
             let api = `${import.meta.env.VITE_BACK_URL}/admin/usercreate`;
             const response = await axios.post(api, userdata);
-            toast.success(response.data);
+            toast.success(response.data); 
+            setuserdata({}); 
 
         } catch (error) {
             console.log(error)

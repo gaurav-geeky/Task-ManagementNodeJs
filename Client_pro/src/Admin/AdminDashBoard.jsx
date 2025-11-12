@@ -34,19 +34,19 @@ const AdminDashBoard = () => {
                     <div id="adminmenu">
                         <NavLink
                             className={({ isActive }) => (isActive ? "adminactive-menu" : "")}
-                            to="/admin-dashboard" end > Admin Home</NavLink>
+                            to="/admin-dashboard" end > 🏠 Admin Home</NavLink>
 
                         <NavLink
                             className={({ isActive }) => (isActive ? "adminactive-menu" : "")}
-                            to="create-user" >Create User</NavLink>
+                            to="create-user" >🙍🏻‍♂️ Create User</NavLink>
 
                         <NavLink
                             className={({ isActive }) => (isActive ? "adminactive-menu" : "")}
-                            to="assign-task" > Assign Task </NavLink>
+                            to="assign-task" > 🎯 Assign Task </NavLink>
 
                         <NavLink
                             className={({ isActive }) => (isActive ? "adminactive-menu" : "")}
-                            to="report" > Report </NavLink>
+                            to="report" > 📝 Reports ... </NavLink>
 
                         {/* <Link>sd sd</Link> */}
                     </div>

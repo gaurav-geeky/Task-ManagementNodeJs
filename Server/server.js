@@ -9,10 +9,12 @@ const AdminRoute = require('./Routes/adminRoute');
 
 const EmpRoute = require("./Routes/employeeRoute"); 
 
-
 mongoose.connect(process.env.DBCONN).then(() => {
     console.log("db connected ho gaya ok ...");
 });
+
+console.log("👉 DB URI from ENV:", process.env.DBCONN);
+
 
 // Body-parser middleware
 app.use(bodyparser.urlencoded({ extended: true }))

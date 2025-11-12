@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import "../css/employee.css"
-import key from "../assets/key.svg"
+import key from "../assets/key.svg" 
+
+import { ToastContainer, toast } from 'react-toastify';
 
 const Settings = () => {
     const [oldpass, setoldpass] = useState("")
@@ -19,12 +21,12 @@ const Settings = () => {
 
                 let api = `${import.meta.env.VITE_BACK_URL}/employee/changepass`;
                 const response = await axios.post(api, { empId, newpass, confirmpass });
-                alert(response.data.msg) 
+                toast.success(response.data.msg) 
                 console.log(response.data.mypass)
 
             }
             else {
-                alert("pass wrong h ..");
+                toast.warning("Either wrong password or missmatch !!");
             }
 
         }
