@@ -21,7 +21,13 @@ app.use(bodyparser.urlencoded({ extended: true }))
 app.use(bodyparser.json())
 
 // use of CORS middlewarre
-app.use(cors());
+// app.use(cors()); 
+app.use(cors({
+  origin: ["https://tm-reactpro3.onrender.com/"],  // allow frontend
+  methods: "GET,POST,PUT,DELETE,PATCH",
+  credentials: true,
+}));
+
 
 
 app.use("/admin", AdminRoute);
