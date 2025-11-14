@@ -15,7 +15,6 @@ const EmpRoute = require("./Routes/employeeRoute");
 //     console.log(error)
 // })
 
-
 mongoose
     .connect(process.env.DBCONN, {
         serverSelectionTimeoutMS: 5000,
