@@ -2,7 +2,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import "../css/user.css"
-import logo1 from "../assets/passKey.png"
+import logo1 from "../assets/green-user2.png"
 
 import { ToastContainer, toast } from 'react-toastify';
 

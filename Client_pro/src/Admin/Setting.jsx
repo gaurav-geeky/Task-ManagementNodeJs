@@ -42,7 +42,7 @@ const Setting = () => {
     return (
         <>
             <div id='adminsetting'>
-                <h1>Need to Change Your Password ?</h1>
+                <h1>Admin can Change his Password here.</h1>
 
                 <article>
 
