@@ -69,28 +69,4 @@ const EmpHome = () => {
     )
 }
 
-export default EmpHome
-
-/*
-
-
-[
-
-{
-
-_id  :      690c95791e76ca076d845c36
-task    :   "html"
-duration    ;       2
-priority    :   "Medium"
-empid   :   "690c95441e76ca076d845c2d"
-__v     ;       0
-completionday   :   12
-submitstatus    ;       true
-taskstatus  :   "Fully Completed"
-
-}
-
-]
-
-
-*/
+export default EmpHome; 

@@ -1,5 +1,3 @@
-
-
 import React from 'react'
 import { useState } from 'react'
 import axios from "axios";
@@ -25,26 +23,24 @@ const Form = () => {
         if (usertype === "admin") {
             try {
                 let api = `${import.meta.env.VITE_BACK_URL}/admin/login`;
-                const response = await axios.post(api, { email: email, password: password });
+                const response = await axios.post(api, { email, password });
 
                 localStorage.setItem("adminname", response.data.Admin.name);
                 localStorage.setItem("adminemail", response.data.Admin.email);
-                localStorage.setItem("adminPass", response.data.Admin.password)
-                localStorage.setItem("adminId", response.data.Admin._id)
+                localStorage.setItem("adminPass", response.data.Admin.password);
+                localStorage.setItem("adminId", response.data.Admin._id);
 
                 toast.success(response.data.msg);
                 navigate("/admin-dashboard");
             }
             catch (error) {
-                console.log(error);
                 toast.warning(error.response.data.msg);
             }
         }
-
         else {
             try {
                 let api = `${import.meta.env.VITE_BACK_URL}/employee/login`;
-                const response = await axios.post(api, { email: email, password: password });
+                const response = await axios.post(api, { email, password });
 
                 localStorage.setItem("empname", response.data.employee.name);
                 localStorage.setItem("empmail", response.data.employee.mail);
@@ -52,12 +48,11 @@ const Form = () => {
                 localStorage.setItem("empid", response.data.employee._id);
                 localStorage.setItem("empPass", response.data.employee.password);
 
-                toast.success(` welcome ${response.data.employee.name}`);
+                toast.success(`Welcome ${response.data.employee.name}`);
                 navigate("/emp-dashboard");
             }
             catch (error) {
-                console.log(error)
-                toast.warning(error.response.data.msg)
+                toast.warning(error.response.data.msg);
             }
         }
     }
@@ -67,63 +62,63 @@ const Form = () => {
             <div className='loginbody'>
 
                 <h1 id='loghead'>Task Management App</h1>
-                <p>Login to Dashboard</p>
 
                 <section id="logcontain">
 
+                    {/* LEFT SIDE IMAGE */}
                     <div className="loginwelcome">
-                        <img src={logo1} alt="" />
+                        <img src={logo1} alt="welcome" />
                         <div>
                             <p>👉 Track your tasks and stay on schedule.</p>
                             <p>👉 Access your dashboard and manage your projects easily.</p>
                             <p>👉 Log in to view and update your assigned tasks.</p>
-
                         </div>
                     </div>
 
+                    {/* ⭐ WRAPPED FORM + TITLE TOGETHER ⭐ */}
+                    <div className="formwrapper">
+                        <p id="formtitle">Login to Dashboard</p>
 
-                    <form className='loginform'>
+                        <form className='loginform' onSubmit={handleSubmit}>
 
-                        <div id='loginlogo'>
-                            <img src={logo} alt="logo" />
-                            <span id='tasky'>Tasky</span>
-                        </div>
+                            <div id='loginlogo'>
+                                <img src={logo} alt="logo" />
+                                <span id='tasky'>Tasky</span>
+                            </div>
 
-                        <h1>Welcome Back!</h1>
-                        <div>Please enter login details below</div>
-                        {/*  */}
+                            <h2 className='welcome'>Welcome Back!</h2>
+                            <div>Please enter login details below</div>
 
-                        <label className='loglabel' htmlFor="">Email Address</label>
-                        <input
-                            className="loginput"
-                            placeholder='Enter your email'
-                            type="email"
-                            name='email'
-                            onChange={(e) => { setemail(e.target.value) }} />
-                        {/*  */}
+                            <label className='loglabel'>Email Address</label>
+                            <input
+                                className="loginput"
+                                placeholder='Enter your email'
+                                type="email"
+                                onChange={(e) => setemail(e.target.value)}
+                            />
 
-                        <label className='loglabel' htmlFor="">Password</label>
-                        <input
-                            className="loginput"
-                            placeholder='Enter your password'
-                            type="password"
-                            name='password'
-                            onChange={(e) => { setpassword(e.target.value) }} />
-                        {/*  */}
+                            <label className='loglabel'>Password</label>
+                            <input
+                                className="loginput"
+                                placeholder='Enter your password'
+                                type="password"
+                                onChange={(e) => setpassword(e.target.value)}
+                            />
 
-                        <label className='loglabel' htmlFor="">Select User</label>
-                        <select
-                            className="loginput"
-                            name='usertype'
-                            onChange={(e) => { setusertype(e.target.value) }}>
-                            <option aria-disabled > select user</option>
-                            <option value="admin">Admin</option>
-                            <option value="employee">Employee</option>
-                        </select>
+                            <label className='loglabel'>Select User</label>
+                            <select
+                                className="loginput"
+                                onChange={(e) => setusertype(e.target.value)}
+                            >
+                                <option disabled>select user</option>
+                                <option value="admin">Admin</option>
+                                <option value="employee">Employee</option>
+                            </select>
 
-                        <button id='btnlog' type='submit' onClick={handleSubmit}>Login</button>
+                            <button id='btnlog' type='submit'>Login</button>
 
-                    </form >
+                        </form>
+                    </div>
 
                 </section>
 
@@ -131,11 +126,8 @@ const Form = () => {
 
         </>
     )
-
-
 }
 
 export default Form;
-
 
 

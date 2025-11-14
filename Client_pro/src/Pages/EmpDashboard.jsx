@@ -26,16 +26,6 @@ const EmpDashboard = () => {
 
                 <div className="empcontainer">
 
-                    {/* <div id="empmenu">
-                        <Link to="/emp-dashboard"> Employee Home</Link>
-
-                        <Link to="mytask">Total Tasks</Link>
-
-                        <Link to="submitedtask"> Submited Tasks</Link>
-
-                        <Link to="remainingTask"> Remaining Tasks</Link>
-                    </div> */}
-
                     <div id="empmenu">
                         <NavLink to="/emp-dashboard"
                             className={({ isActive }) => (isActive ? "empactive-menu" : "")}

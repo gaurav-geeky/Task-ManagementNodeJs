@@ -2,6 +2,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@500&display=swap');
 
+/* Remove horizontal scrolling everywhere */
+html, body {
+  width: 100%;
+  overflow-x: hidden !important;
+}
+
+/* Prevent child elements from breaking layout */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+
 :root {
     --purple1: rgb(158, 46, 244);
     --blue1: rgb(50, 50, 241);
@@ -275,20 +288,6 @@
     transform: scale(1.05);
     transition: 0.25s ease-in-out;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
