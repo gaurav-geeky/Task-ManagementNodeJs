@@ -15,6 +15,7 @@ const EmpRoute = require("./Routes/employeeRoute");
 //     console.log(error)
 // })
 
+
 mongoose
     .connect(process.env.DBCONN, {
         serverSelectionTimeoutMS: 5000,
@@ -32,13 +33,13 @@ app.use(bodyparser.urlencoded({ extended: true }))
 app.use(bodyparser.json())
 
 // use of CORS middlewarre
-app.use(cors()); 
+// app.use(cors()); 
 
-// app.use(cors({
-//     origin: ["https://tm-reactpro3.onrender.com"],  // allow frontend
-//     methods: "GET,POST,PUT,DELETE,PATCH",
-//     credentials: true,
-// }));
+app.use(cors({
+    origin: ["https://front1-4jln.onrender.com"],  // allow frontend
+    methods: "GET,POST,PUT,DELETE,PATCH",
+    credentials: true,
+}));
 
 
 
