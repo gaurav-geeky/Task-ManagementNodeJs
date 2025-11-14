@@ -36,7 +36,7 @@ app.use(bodyparser.json())
 // app.use(cors()); 
 
 app.use(cors({
-    origin: ["https://front1-4jln.onrender.com"],  // allow frontend
+    origin: ["https://front11-l8h1.onrender.com"],  // allow frontend
     methods: "GET,POST,PUT,DELETE,PATCH",
     credentials: true,
 }));
