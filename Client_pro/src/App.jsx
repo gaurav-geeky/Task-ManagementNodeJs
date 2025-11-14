@@ -10,6 +10,7 @@ import CreateUser from './Admin/CreateUser'
 import AssignTask from './Admin/AssignTask'
 import AdminHome from './Admin/AdminHome'
 import Report from './Admin/Report'
+import Setting from './Admin/Setting'
 
 
 // employee
@@ -43,6 +44,7 @@ function App() {
           <Route path='create-user' element={<CreateUser />} />
           <Route path='assign-task' element={<AssignTask />} />
           <Route path='report' element={<Report />} />
+          <Route path='setting' element={<Setting />} />
         </Route>
       </Routes >
 

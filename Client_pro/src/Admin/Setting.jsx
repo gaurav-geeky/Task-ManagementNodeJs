@@ -5,24 +5,26 @@ import key from "../assets/key.svg"
 
 import { ToastContainer, toast } from 'react-toastify';
 
-// Employee password change
+//  Admin password change
 
-const Settings = () => {
+const Setting = () => {
     const [oldpass, setoldpass] = useState("")
     const [newpass, setnewpass] = useState("")
     const [confirmpass, setconfirmpass] = useState("")
 
-    const empPass = localStorage.getItem("empPass");
-    const empId = localStorage.getItem("empid");
+    const adminPass = localStorage.getItem("adminPass"); 
+    const adminId = localStorage.getItem("adminId"); 
+    
+                
 
     let handleSubmit = async (e) => {
 
         e.preventDefault();
         try {
-            if (oldpass === empPass && newpass === confirmpass) {
+            if (oldpass === adminPass && newpass === confirmpass) {
 
-                let api = `${import.meta.env.VITE_BACK_URL}/employee/changepass`;
-                const response = await axios.post(api, { empId, newpass, confirmpass });
+                let api = `${import.meta.env.VITE_BACK_URL}/admin/changepass`;
+                const response = await axios.post(api, { adminId, newpass, confirmpass });
                 toast.success(response.data.msg) 
                 console.log(response.data.mypass)
 
@@ -39,7 +41,7 @@ const Settings = () => {
 
     return (
         <>
-            <div id='empsetting'>
+            <div id='adminsetting'>
                 <h1>Need to Change Your Password ?</h1>
 
                 <article>
@@ -72,4 +74,4 @@ const Settings = () => {
     )
 }
 
-export default Settings
+export default Setting; 

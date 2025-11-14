@@ -17,7 +17,7 @@ const empLogin = async (req, res) => {
         res.status(401).send({ msg: "Invalid Employee Password !" });
     }
 
-    res.status(200).send({ employee: employee, msg: "Employee logged in Succesfully !" });
+    return res.status(200).send({ employee: employee, msg: "Employee logged in Succesfully !" });
 }
 
 

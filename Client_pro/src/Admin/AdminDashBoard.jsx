@@ -48,8 +48,13 @@ const AdminDashBoard = () => {
                             className={({ isActive }) => (isActive ? "adminactive-menu" : "")}
                             to="report" > 📝 Reports ... </NavLink>
 
-                        {/* <Link>sd sd</Link> */}
+                        <NavLink
+                            className={({ isActive }) => (isActive ? "adminactive-menu" : "")}
+                            to="setting" > 🔧 Settings ... </NavLink>
+
+                        
                     </div>
+
                     <div id="admindata">
                         <Outlet />
                         {/* <p>sg</p> */}

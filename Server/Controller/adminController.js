@@ -8,6 +8,8 @@ const emailSend = require('../middleware/empMail');
 const EmpModel = require('../Model/empModel');
 const empModel = require('../Model/empModel');
 const taskModel = require('../Model/taskModel');
+const adminModel = require('../Model/adminModel');
+
 
 
 const adminLogin = async (req, res) => {
@@ -15,6 +17,10 @@ const adminLogin = async (req, res) => {
     const { email, password } = req.body;
     try {
         const Admin = await AdminModel.findOne({ email: email });
+
+        if (!Admin && Admin.password != password) {
+            console.log(Admin);
+        }
 
         if (!Admin) {
             res.status(401).send({ msg: "Invalid Email.." });
@@ -24,7 +30,7 @@ const adminLogin = async (req, res) => {
             res.status(401).send({ msg: "Invalid Password.." });
         }
 
-        res.status(200).send({ Admin: Admin, msg: "Login Succesfull..." });
+        return res.status(200).send({ Admin: Admin, msg: "Login Succesfull..." });
 
     } catch (error) {
         console.log(error);
@@ -73,7 +79,7 @@ const taskSave = async (req, res) => {
     res.status(201).send({ msg: "Task Successfully assigned ..." });
 }
 
-
+// admin home total tasks display. 
 const dashboardStats = async (req, res) => {
     try {
         const totalUsers = await empModel.countDocuments();
@@ -98,6 +104,7 @@ const dashboardStats = async (req, res) => {
     }
 };
 
+// emp task report
 const taskReportDisplay = async (req, res) => {
     const taskreport = await taskModel.find({ submitstatus: true }).populate("empid");
     res.status(201).send(taskreport);
@@ -111,6 +118,16 @@ const taskReassign = async (req, res) => {
 }
 
 
+// password
+const changePassword = async (req, res) => {
+    const { adminId, newpass } = req.body
+    const changepass = await adminModel.findByIdAndUpdate(adminId, {
+        password: newpass
+    });
+    res.status(201).send({ mypass: changepass, msg: "Admin Pass changed successfully !!" });
+}
+
+
 module.exports = {
     adminLogin,
     userCreate,
@@ -118,7 +135,8 @@ module.exports = {
     taskSave,
     dashboardStats,
     taskReportDisplay,
-    taskReassign
+    taskReassign,
+    changePassword
 
 }
 

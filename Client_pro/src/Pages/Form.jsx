@@ -20,6 +20,8 @@ const Form = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log("Env value:", import.meta.env.VITE_BACK_URL);
+
         if (usertype === "admin") {
             try {
                 let api = `${import.meta.env.VITE_BACK_URL}/admin/login`;
@@ -27,6 +29,8 @@ const Form = () => {
 
                 localStorage.setItem("adminname", response.data.Admin.name);
                 localStorage.setItem("adminemail", response.data.Admin.email);
+                localStorage.setItem("adminPass", response.data.Admin.password)
+                localStorage.setItem("adminId", response.data.Admin._id)
 
                 toast.success(response.data.msg);
                 navigate("/admin-dashboard");
