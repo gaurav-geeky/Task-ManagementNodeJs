@@ -11,30 +11,22 @@ const taskModel = require('../Model/taskModel');
 const adminModel = require('../Model/adminModel');
 
 
-
 const adminLogin = async (req, res) => {
     console.log(req.body);
     const { email, password } = req.body;
-    try {
-        const Admin = await AdminModel.findOne({ email: email });
 
-        if (!Admin && Admin.password != password) {
-            console.log(Admin);
-        }
+    const Admin = await AdminModel.findOne({ email: email });
 
-        if (!Admin) {
-            res.status(401).send({ msg: "Invalid Email.." });
-        }
-
-        if (Admin.password != password) {
-            res.status(401).send({ msg: "Invalid Password.." });
-        }
-
-        return res.status(200).send({ Admin: Admin, msg: "Login Succesfull..." });
-
-    } catch (error) {
-        console.log(error);
+    if (!Admin) {
+        res.status(401).send({ msg: "Invalid admin Email.." });
     }
+
+    if (Admin.password != password) {
+        res.status(401).send({ msg: "Invalid admin Password.." });
+    }
+
+    return res.status(200).send({ Admin: Admin, msg: "Admin Login Succesfull..." });
+
 }
 
 // create new employee

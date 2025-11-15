@@ -49,6 +49,7 @@ const Form = () => {
                 localStorage.setItem("empPass", response.data.employee.password);
 
                 toast.success(`Welcome ${response.data.employee.name}`);
+                toast.success(response.data.msg); 
                 navigate("/emp-dashboard");
             }
             catch (error) {
@@ -110,7 +111,7 @@ const Form = () => {
                                 className="loginput"
                                 onChange={(e) => setusertype(e.target.value)}
                             >
-                                <option disabled>select user</option>
+                                <option disabled >select user</option>
                                 <option value="admin">Admin</option>
                                 <option value="employee">Employee</option>
                             </select>
