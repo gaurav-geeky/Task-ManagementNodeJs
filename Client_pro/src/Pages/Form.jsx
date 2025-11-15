@@ -43,7 +43,7 @@ const Form = () => {
                 const response = await axios.post(api, { email, password });
 
                 localStorage.setItem("empname", response.data.employee.name);
-                localStorage.setItem("empmail", response.data.employee.mail);
+                localStorage.setItem("empemail", response.data.employee.email);
                 localStorage.setItem("empdesignation", response.data.employee.designation);
                 localStorage.setItem("empid", response.data.employee._id);
                 localStorage.setItem("empPass", response.data.employee.password);
