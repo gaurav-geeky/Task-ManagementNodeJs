@@ -1,0 +1,157 @@
+/* ================================= RESET ================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ================================ MAIN WRAPPER ================================ */
+.admindashboard {
+  width: 100%;
+  min-height: 100vh;
+  background: #e6ebff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================================= HEADER ================================= */
+#adminheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 15px;
+  background: #e6ebff;
+}
+
+#admin {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #4a4aff;
+}
+
+#admin span {
+  color: #000;
+}
+
+.welcome {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.logout {
+  background: #f8e294;
+  /* CHANGED to pure red */
+  border: none;
+  padding: 7px 15px;
+  border-radius: 5px;
+  color: blue;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ================================= MENU ================================= */
+#adminmenu {
+  width: 240px;
+  /* KEEP full width even in mobile */
+  background: #7d7dff;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: left 0.3s ease;
+}
+
+#adminmenu a {
+  text-decoration: none;
+  padding: 12px;
+  background: #cadeff;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #000;
+}
+
+/* ================================= CLOSE BUTTON ================================= */
+#closemenu {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* ================================= PAGE CONTENT ================================= */
+#admindata {
+  flex: 1;
+  padding: 20px;
+  background: linear-gradient(to bottom, #7d7dff, #afddff, lightblue);
+}
+
+/* ================================= HAMBURGER ================================= */
+#hamburger {
+  display: none;
+  font-size: 32px;
+  padding: 6px 10px;
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ================================= RESPONSIVE ================================= */
+/* 💥 HAMBURGER activates at 1000px */
+@media (max-width: 1000px) {
+
+  #hamburger {
+    display: block;
+  }
+
+  /* Header stacks */
+  #adminheader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .welcome {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  /* MENU becomes fixed drawer but KEEPS FULL WIDTH (240px) */
+  #adminmenu {
+    position: fixed;
+    top: 0;
+    left: -240px;
+    /* hide fully */
+    height: 100vh;
+    width: 240px;
+    /* KEEP original width */
+    padding-top: 80px;
+    z-index: 2000;
+  }
+
+  /* When menu is opened */
+  #adminmenu.showmenu {
+    left: 0;
+    /* slide in with same width */
+    width: 260px;
+    height: 100%;
+  }
+
+  #adminmenu.showmenu #closemenu {
+    display: block;
+  }
+
+  .admincontainer {
+    flex-direction: column;
+  }
+}

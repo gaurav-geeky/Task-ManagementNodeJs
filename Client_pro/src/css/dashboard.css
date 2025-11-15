@@ -27,6 +27,9 @@ html, body {
 }
 
 
+
+
+
 /*  admin dashboard */
 
 .admindashboard {
@@ -102,6 +105,8 @@ html, body {
     padding: 20px;
     background: linear-gradient(to bottom, rgb(125, 125, 255) 0%, rgb(167, 223, 246) 50%, lightblue 100%);
 }
+
+
 
 
 
@@ -191,6 +196,8 @@ html, body {
     font-weight: bold;
 
 }
+
+
 
 
 

@@ -111,7 +111,7 @@ const Form = () => {
                                 className="loginput"
                                 onChange={(e) => setusertype(e.target.value)}
                             >
-                                <option disabled >select user</option>
+                                <option >select user</option>
                                 <option value="admin">Admin</option>
                                 <option value="employee">Employee</option>
                             </select>

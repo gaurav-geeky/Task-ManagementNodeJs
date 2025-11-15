@@ -12,7 +12,8 @@ const EmpHome = () => {
         try {
             let api = `${import.meta.env.VITE_BACK_URL}/employee/empdata/?id=${localStorage.getItem("empid")}`;
             const response = await axios.get(api);
-            setmydata(response.data)
+            setmydata(response.data) 
+            
         }
         catch (error) {
             console.log(error);
