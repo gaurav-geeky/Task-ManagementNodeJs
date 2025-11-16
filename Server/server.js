@@ -9,20 +9,20 @@ const AdminRoute = require('./Routes/adminRoute');
 
 const EmpRoute = require("./Routes/employeeRoute");
 
-mongoose.connect(process.env.DBCONN).then(() => {
-    console.log("db connected ho gaya ok ...")
-}).catch((error) => {
-    console.log(error)
-})
+// mongoose.connect(process.env.DBCONN).then(() => {
+//     console.log("db connected ho gaya ok ...")
+// }).catch((error) => {
+//     console.log(error)
+// })
 
 
-// mongoose
-//     .connect(process.env.DBCONN, {
-//         serverSelectionTimeoutMS: 5000,
-//         tls: true // explicitly enable TLS
-//     })
-//     .then(() => console.log("✅ MongoDB Connected Successfully"))
-//     .catch((err) => console.error("❌ MongoDB Connection Error:", err));
+mongoose
+    .connect(process.env.DBCONN, {
+        serverSelectionTimeoutMS: 5000,
+        tls: true // explicitly enable TLS
+    })
+    .then(() => console.log("✅ MongoDB Connected Successfully"))
+    .catch((err) => console.error("❌ MongoDB Connection Error:", err));
 
 console.log("👉 DB URI from ENV:", process.env.DBCONN);
 
@@ -32,13 +32,13 @@ app.use(bodyparser.urlencoded({ extended: true }))
 app.use(bodyparser.json())
 
 // use of CORS middlewarre
-app.use(cors()); 
+// app.use(cors()); 
 
-// app.use(cors({
-//     origin: ["https://front11-l8h1.onrender.com"],  // allow frontend
-//     methods: "GET,POST,PUT,DELETE,PATCH",
-//     credentials: true,
-// }));
+app.use(cors({
+    origin: ["https://front11-l8h1.onrender.com"],  // allow frontend
+    methods: "GET,POST,PUT,DELETE,PATCH",
+    credentials: true,
+}));
 
 
 
