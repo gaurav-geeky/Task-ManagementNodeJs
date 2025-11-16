@@ -1,5 +1,6 @@
 /* Remove horizontal scrolling everywhere */
-html, body {
+html,
+body {
   width: 100%;
   overflow-x: hidden !important;
 }
@@ -49,7 +50,8 @@ html, body {
 
   display: flex;
   justify-content: center;
-  align-items: stretch;    /* ⭐ FIXED: was flex-start; now children match height */
+  align-items: stretch;
+  /* ⭐ FIXED: was flex-start; now children match height */
   gap: 1.2rem;
   flex-wrap: wrap;
 }
@@ -62,10 +64,13 @@ html, body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;   /* ⭐ FIXED: centers vertically */
-  align-items: flex-start;   /* keep text left-aligned */
+  justify-content: center;
+  /* ⭐ FIXED: centers vertically */
+  align-items: flex-start;
+  /* keep text left-aligned */
   gap: 1rem;
-  padding-left: 6px;         /* small breathing space from left edge */
+  padding-left: 6px;
+  /* small breathing space from left edge */
 }
 
 /* LEFT IMAGE
@@ -76,17 +81,18 @@ html, body {
   max-width: 100%;
   height: auto;
   display: block;
-  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.45));
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.45));
 }
 
 /* TEXT BELOW IMAGE
    Keep it left-aligned and on one line on wide screens.
    If page gets narrow, it will wrap naturally.
 */
-.loginwelcome > div p {
+.loginwelcome>div p {
   font-size: 1.3rem;
   color: white;
-  white-space: nowrap;   /* keep single line on desktop */
+  white-space: nowrap;
+  /* keep single line on desktop */
   margin-top: 8px;
   text-align: left;
 }
@@ -116,7 +122,7 @@ html, body {
   width: 380px;
   padding: 2rem;
   border-radius: 18px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -186,7 +192,7 @@ html, body {
   }
 
   /* For tablet: allow text lines to wrap and align start */
-  .loginwelcome > div p {
+  .loginwelcome>div p {
     white-space: normal;
     text-align: left;
   }
@@ -218,7 +224,7 @@ html, body {
   }
 
   /* mobile: keep text left aligned but allow wrapping */
-  .loginwelcome > div p {
+  .loginwelcome>div p {
     white-space: normal;
   }
 
@@ -239,3 +245,30 @@ html, body {
    - On tablet/mobile I revert .loginwelcome to justify-content:flex-start so stacking looks natural.
    - No JSX changes required.
    =============================== */
+
+
+
+
+
+
+
+
+/*    menu bar highlight the current option  */
+
+/* Active menu highlight */
+
+#empmenu a.empactive-menu {
+  background-color: white !important;
+  color: black !important;
+  border: 2px solid white;
+  transform: scale(1.05);
+  transition: 0.25s ease-in-out;
+}
+
+#adminmenu a.adminactive-menu {
+  background-color: white !important;
+  color: var(--blue1) !important;
+  border: 2px solid white;
+  transform: scale(1.05);
+  transition: 0.25s ease-in-out;
+}

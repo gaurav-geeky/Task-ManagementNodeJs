@@ -1,7 +1,7 @@
 import React from 'react'
-import "../css/dashboard.css"
+import "../empcss/empdash.css"
 import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom'
-
+import "../css/form.css"
 
 const EmpDashboard = () => {
     let empname = localStorage.getItem("empname");
@@ -17,6 +17,14 @@ const EmpDashboard = () => {
             <div className='empdashboard'>
 
                 <div id="empheader">
+
+                    {/* NEW HAMBURGER BUTTON FOR MOBILE */}
+                    <div id="hamburger" onClick={() => {
+                        document.getElementById("empmenu").classList.toggle("showmenu");
+                    }}>
+                        ☰
+                    </div>
+
                     <h1 id='employee'>Employees <span>Dashboard</span>  </h1>
                     <div className='welcome'>
                         Welcome, {empname}
@@ -27,6 +35,16 @@ const EmpDashboard = () => {
                 <div className="empcontainer">
 
                     <div id="empmenu">
+
+                        {/* NEW CLOSE BUTTON FOR MOBILE MENU */}
+                        <div id="closemenu" onClick={() => {
+                            document.getElementById("empmenu").classList.remove("showmenu");
+                        }}>
+                            ×
+                        </div> 
+
+                        {/* menu bar highlight the current option form css */}
+
                         <NavLink to="/emp-dashboard"
                             className={({ isActive }) => (isActive ? "empactive-menu" : "")}
                             end
@@ -51,7 +69,7 @@ const EmpDashboard = () => {
 
                         <NavLink to="settings"
                             className={({ isActive }) => (isActive ? "empactive-menu" : "")} >
-                             Settings
+                            Settings
                         </NavLink>
                     </div>
 

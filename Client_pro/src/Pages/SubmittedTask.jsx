@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Table from 'react-bootstrap/esm/Table';
 import "../css/employee.css"
-import "../css/dashboard.css"
 
 const SubmittedTask = () => {
     const [mydata, setmydata] = useState([]);

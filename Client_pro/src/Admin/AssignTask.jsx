@@ -5,7 +5,7 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import "../css/dashboard.css"
+import "../css/assigntask.css"
 import { toast } from "react-toastify";
 
 const AssignTask = () => {
@@ -82,8 +82,8 @@ const AssignTask = () => {
     <>
       <h1> Assign Task</h1>
 
-      <div className="custom-table-wrapper">
-        <Table className="custom-table" striped bordered hover>
+      <div className="table-responsive-wrapper">
+        <Table className="table-custom" striped bordered hover> 
           <thead>
             <tr>
               <th>sno</th>

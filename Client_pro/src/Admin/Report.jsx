@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-
+import "../css/assigntask.css"
 
 const Report = () => {
     const [mydata, setmydata] = useState([]);
@@ -66,8 +66,8 @@ const Report = () => {
 
                 <h1> report of employee tasks </h1>
 
-                <div className="custom-table-wrapper">
-                    <Table className="custom-table" striped bordered hover>
+                <div className="table-responsive-wrapper">
+                    <Table className="table-custom" striped bordered hover>
                         <thead>
                             <tr>
                                 <th>#</th>

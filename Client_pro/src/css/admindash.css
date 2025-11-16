@@ -10,7 +10,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ================================ MAIN WRAPPER ================================ */
+/* ================================= MAIN WRAPPER ================================= */
 .admindashboard {
   width: 100%;
   min-height: 100vh;
@@ -24,10 +24,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 15px;
-  background: #e6ebff;
+  margin: 10px 2.5vw;
 }
 
+/* Title */
 #admin {
   font-size: 1.7rem;
   font-weight: 800;
@@ -38,33 +38,70 @@ body {
   color: #000;
 }
 
+/* ================================= WELCOME SECTION ================================= */
 .welcome {
+  color: black !important;
   display: flex;
   align-items: center;
   gap: 10px;
   font-weight: 600;
+  font-size: 1rem;
 }
 
 .logout {
   background: #f8e294;
-  /* CHANGED to pure red */
   border: none;
   padding: 7px 15px;
   border-radius: 5px;
   color: blue;
   cursor: pointer;
   font-weight: bold;
+  border: 2px solid black;
+}
+
+/* ================================= HAMBURGER ================================= */
+#hamburger {
+  display: none;
+  font-size: 32px;
+  padding: 6px 10px;
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ================================= ADMIN CONTAINER ================================= */
+
+.admincontainer {
+  display: flex;
+
+  /* ⭐ Your requested properties */
+  margin: 2vh auto;
+  /* NOW WORKS */
+  border-radius: 20px;
+  /* NOW WORKS */
+
+  /* ⭐ Required for border-radius to *show* */
+  background: #dce6ff;
+  /* Light neutral background */
+  overflow: hidden;
+  /* Prevent children from leaking outside */
+
+  width: 95%;
+  min-height: 85vh;
 }
 
 /* ================================= MENU ================================= */
 #adminmenu {
   width: 240px;
-  /* KEEP full width even in mobile */
   background: #7d7dff;
   padding: 20px 15px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 40px;
+
+  /* ⭐ Round left corners to match container */
+  border-radius: 20px 0 0 20px;
+
   transition: left 0.3s ease;
 }
 
@@ -78,7 +115,7 @@ body {
   color: #000;
 }
 
-/* ================================= CLOSE BUTTON ================================= */
+/* ================================= CLOSE BUTTON (MOBILE) ================================= */
 #closemenu {
   display: none;
   font-size: 28px;
@@ -88,32 +125,26 @@ body {
   margin-bottom: 20px;
 }
 
-/* ================================= PAGE CONTENT ================================= */
+/* ================================= DATA PANEL ================================= */
 #admindata {
   flex: 1;
   padding: 20px;
-  background: linear-gradient(to bottom, #7d7dff, #afddff, lightblue);
-}
 
-/* ================================= HAMBURGER ================================= */
-#hamburger {
-  display: none;
-  font-size: 32px;
-  padding: 6px 10px;
-  background: #fff;
-  border-radius: 5px;
-  cursor: pointer;
+  /* ⭐ Round right corners */
+  border-radius: 0 20px 20px 0;
+
+  background: linear-gradient(to bottom, #7d7dff, #afddff, lightblue);
+  min-height: 100%;
 }
 
 /* ================================= RESPONSIVE ================================= */
-/* 💥 HAMBURGER activates at 1000px */
 @media (max-width: 1000px) {
 
   #hamburger {
     display: block;
   }
 
-  /* Header stacks */
+  /* Header becomes column */
   #adminheader {
     flex-direction: column;
     align-items: flex-start;
@@ -126,23 +157,22 @@ body {
     gap: 4px;
   }
 
-  /* MENU becomes fixed drawer but KEEPS FULL WIDTH (240px) */
+  /* Mobile drawer menu */
   #adminmenu {
     position: fixed;
     top: 0;
     left: -240px;
-    /* hide fully */
     height: 100vh;
     width: 240px;
-    /* KEEP original width */
     padding-top: 80px;
     z-index: 2000;
+
+    /* Remove border-radius in mobile (looks cleaner) */
+    border-radius: 0;
   }
 
-  /* When menu is opened */
   #adminmenu.showmenu {
     left: 0;
-    /* slide in with same width */
     width: 260px;
     height: 100%;
   }
@@ -153,5 +183,12 @@ body {
 
   .admincontainer {
     flex-direction: column;
+
+    /* preserve your radius in mobile */
+    border-radius: 20px;
+  }
+
+  #admindata {
+    border-radius: 0 0 20px 20px;
   }
 }

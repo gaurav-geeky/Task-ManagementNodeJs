@@ -2,7 +2,7 @@
 import React from 'react'
 import "../css/admindash.css"
 import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom'
-
+import "../css/form.css"
 
 const AdminDashBoard = () => {
     let adminname = localStorage.getItem("adminname");
@@ -24,7 +24,7 @@ const AdminDashBoard = () => {
                     <div id="hamburger" onClick={() => {
                         document.getElementById("adminmenu").classList.toggle("showmenu");
                     }}>
-                        🍔
+                        ☰
                     </div>
 
                     <h1 id='admin'>Admin <span>Dashboard</span>  </h1>
@@ -47,6 +47,8 @@ const AdminDashBoard = () => {
                         }}>
                             ×
                         </div>
+
+                        {/* menu bar highlight the current option form css */}
                         
                         <NavLink
                             className={({ isActive }) => (isActive ? "adminactive-menu" : "")}
