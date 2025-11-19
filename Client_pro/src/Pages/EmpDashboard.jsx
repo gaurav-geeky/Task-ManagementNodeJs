@@ -9,6 +9,7 @@ const EmpDashboard = () => {
 
     let navigate = useNavigate()
     const logout = () => {
+        localStorage.clear(); 
         navigate("/")
     }
 
@@ -33,7 +34,6 @@ const EmpDashboard = () => {
                 </div>
 
                 <div className="empcontainer">
-
                     <div id="empmenu">
 
                         {/* NEW CLOSE BUTTON FOR MOBILE MENU */}
@@ -47,32 +47,35 @@ const EmpDashboard = () => {
 
                         <NavLink to="/emp-dashboard"
                             className={({ isActive }) => (isActive ? "empactive-menu" : "")}
-                            end
-                        >
+                            end >
                             Employee Home
                         </NavLink>
+
 
                         <NavLink to="mytask"
                             className={({ isActive }) => (isActive ? "empactive-menu" : "")} >
                             Total Tasks
-                        </NavLink>
+                        </NavLink> 
+
 
                         <NavLink to="submitedtask"
                             className={({ isActive }) => (isActive ? "empactive-menu" : "")} >
                             Submitted Tasks
-                        </NavLink>
+                        </NavLink> 
+
 
                         <NavLink to="remainingTask"
                             className={({ isActive }) => (isActive ? "empactive-menu" : "")} >
                             Remaining Tasks
-                        </NavLink>
+                        </NavLink> 
+
 
                         <NavLink to="settings"
                             className={({ isActive }) => (isActive ? "empactive-menu" : "")} >
                             Settings
-                        </NavLink>
-                    </div>
+                        </NavLink> 
 
+                    </div>
 
                     <div id="empdata">
                         <Outlet />

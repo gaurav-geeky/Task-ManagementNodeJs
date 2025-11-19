@@ -62,9 +62,9 @@ const Report = () => {
 
     return (
         <>
-            <div>
+             <div >
 
-                <h1> report of employee tasks </h1>
+                <h1 > Report of employee tasks </h1>
 
                 <div className="table-responsive-wrapper">
                     <Table className="table-custom" striped bordered hover>

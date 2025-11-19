@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import "../css/employee.css"
-import key from "../assets/key.svg" 
+
+import key from "../assets/key.svg"
+import logo1 from "../assets/passemp.png"
 
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -23,7 +25,7 @@ const Settings = () => {
 
                 let api = `${import.meta.env.VITE_BACK_URL}/employee/changepass`;
                 const response = await axios.post(api, { empId, newpass, confirmpass });
-                toast.success(response.data.msg) 
+                toast.success(response.data.msg)
                 console.log(response.data.mypass)
 
             }
@@ -42,10 +44,11 @@ const Settings = () => {
             <div id='empsetting'>
                 <h1>Need to Change Your Password ?</h1>
 
-                <article>
+                <article id='passemp'>
+                    
+                    <img src={logo1} alt="" />
 
-
-                    <form id='passform'>
+                    <form class='passform'>
                         <img id='passkey' src={key} alt="key" />
 
                         <label className='passlabel' htmlFor=""> Old Password</label>
@@ -63,7 +66,7 @@ const Settings = () => {
                             className='passinput' placeholder='Confirm password' type="text" name='confirmpass' onChange={(e) => setconfirmpass(e.target.value)}
                         />
 
-                        <button id='subpass' className='' type='submit' onClick={handleSubmit}>Submit</button>
+                        <button class='subpass' className='' type='submit' onClick={handleSubmit}>Submit</button>
                     </form>
                 </article>
 

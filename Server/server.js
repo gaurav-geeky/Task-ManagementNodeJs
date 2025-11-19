@@ -6,14 +6,7 @@ require('dotenv').config();
 const bodyparser = require('body-parser')
 const cors = require('cors');
 const AdminRoute = require('./Routes/adminRoute');
-
 const EmpRoute = require("./Routes/employeeRoute");
-
-// mongoose.connect(process.env.DBCONN).then(() => {
-//     console.log("db connected ho gaya ok ...")
-// }).catch((error) => {
-//     console.log(error)
-// })
 
 
 mongoose
@@ -27,12 +20,14 @@ mongoose
 console.log("👉 DB URI from ENV:", process.env.DBCONN);
 
 
+
 // Body-parser middleware
 app.use(bodyparser.urlencoded({ extended: true }))
 app.use(bodyparser.json())
 
 // use of CORS middlewarre
 // app.use(cors()); 
+
 
 app.use(cors({
     origin: ["https://front5-w312.onrender.com"],  // allow frontend

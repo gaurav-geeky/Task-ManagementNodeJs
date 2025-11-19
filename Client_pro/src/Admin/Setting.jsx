@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import "../css/employee.css"
-import key from "../assets/key.svg" 
+import key from "../assets/key.svg"
+import logo1 from "../assets/passadmin.png"
 
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -12,10 +13,10 @@ const Setting = () => {
     const [newpass, setnewpass] = useState("")
     const [confirmpass, setconfirmpass] = useState("")
 
-    const adminPass = localStorage.getItem("adminPass"); 
-    const adminId = localStorage.getItem("adminId"); 
-    
-                
+    const adminPass = localStorage.getItem("adminPass");
+    const adminId = localStorage.getItem("adminId");
+
+
 
     let handleSubmit = async (e) => {
 
@@ -25,7 +26,7 @@ const Setting = () => {
 
                 let api = `${import.meta.env.VITE_BACK_URL}/admin/changepass`;
                 const response = await axios.post(api, { adminId, newpass, confirmpass });
-                toast.success(response.data.msg) 
+                toast.success(response.data.msg)
                 console.log(response.data.mypass)
 
             }
@@ -44,10 +45,11 @@ const Setting = () => {
             <div id='adminsetting'>
                 <h1>Admin can Change his Password here.</h1>
 
-                <article>
+                <article id='passadmin'>
+                    
+                    <img src={logo1} alt="" />
 
-
-                    <form id='passform'>
+                    <form class='passform'>
                         <img id='passkey' src={key} alt="key" />
 
                         <label className='passlabel' htmlFor=""> Old Password</label>
@@ -65,7 +67,7 @@ const Setting = () => {
                             className='passinput' placeholder='Confirm password' type="text" name='confirmpass' onChange={(e) => setconfirmpass(e.target.value)}
                         />
 
-                        <button id='subpass' className='' type='submit' onClick={handleSubmit}>Submit</button>
+                        <button class='subpass' className='' type='submit' onClick={handleSubmit}>Submit</button>
                     </form>
                 </article>
 

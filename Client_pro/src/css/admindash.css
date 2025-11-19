@@ -98,6 +98,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  flex-shrink: 0; 
 
   /* ⭐ Round left corners to match container */
   border-radius: 20px 0 0 20px;

@@ -1,7 +1,7 @@
 
 import React from 'react'
 import "../css/admindash.css"
-import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom'
+import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import "../css/form.css"
 
 const AdminDashBoard = () => {
@@ -11,6 +11,7 @@ const AdminDashBoard = () => {
     let navigate = useNavigate();
 
     const logout = () => {
+        localStorage.clear(); 
         navigate("/")
     }
 
@@ -40,7 +41,6 @@ const AdminDashBoard = () => {
                 <div className="admincontainer">
 
                     <div id="adminmenu">
-
                         {/* NEW CLOSE BUTTON FOR MOBILE MENU */}
                         <div id="closemenu" onClick={() => {
                             document.getElementById("adminmenu").classList.remove("showmenu");
@@ -75,8 +75,8 @@ const AdminDashBoard = () => {
 
                     <div id="admindata">
                         <Outlet />
-                        {/* <p>sg</p> */}
                     </div>
+
                 </div>
 
 

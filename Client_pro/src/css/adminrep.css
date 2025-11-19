@@ -53,12 +53,6 @@
     min-width: 900px; /* ensures scrolling on small screens */
 }
 
-.table-custom td:last-child,
-.table-custom th:last-child {
-    min-width: 140px;   /* or 150px if needed */
-    white-space: nowrap;
-}
-
 /* Header */
 .table-custom thead th {
     background-color: #7b2ff7;
