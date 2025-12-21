@@ -103,11 +103,8 @@ user create form
 }
 
 
-env back wali 
-PORT = 9999 
 
-DBCONN = mongodb+srv://gauravnegigeeky_db_user:6H9Mxyi7PLUyZcAY@cluster0.nfi0hle.mongodb.net/?appName=Cluster0
+
+
  
 
-# render 
-# VITE_BACK_URL = https://task-managementnodejs-1.onrender.com/ 
